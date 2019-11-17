@@ -15,6 +15,7 @@ Route::group([
     'middleware' => ['web'],
     'prefix' => Config::get('route_prefix')
 ], function () {
+
     Route::get('/', 'Home\BaseController@index')->name('home');
 
 });
