@@ -1,17 +1,16 @@
 <?php
 
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Page;
 
 
 use App\Http\Controllers\Controller;
 
 class BaseController extends Controller
 {
-    public function index()
+
+    public function about()
     {
-        return view('home.index');
+        return view('page.about');
     }
-
-
 }

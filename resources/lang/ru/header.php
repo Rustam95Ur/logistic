@@ -1,7 +1,9 @@
 <?php
 
 return [
+
     'address'               => 'Адрес',
+    'address-detail'        => 'Алматы',
     'email'                 => 'Email',
     'phone'                 => 'Телефон',
     'request'               => 'Оставить заявку',
@@ -9,5 +11,10 @@ return [
     'home'                  => 'Главная',
     'contacts'              => 'Контакты',
     'services'              => 'Наши услуги',
-    'cars'                  => 'Выбор машины'
+    'cars'                  => 'Выбор машины',
+
+    'lang'                  => [
+        'ru'                => 'Русский',
+        'en'                => 'English',
+    ]
 ];

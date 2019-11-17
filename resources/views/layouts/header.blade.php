@@ -5,28 +5,94 @@
                 <div class="col d-flex">
                     <div class="top-text">
                         <small class="txt-black">{{trans('header.address')}}</small>
-                        254 Street Avenue, LA US
+                       {{trans('header.address-detail')}}
                     </div>
                     <div class="top-text">
                         <small class="txt-black">{{trans('header.email')}}</small>
-                        <a href="#">support@logzee.com</a>
+                        <a href="mailto:support@logistic.com">support@logistic.com</a>
                     </div>
                     <div class="top-text">
                         <small class="txt-black">{{trans('header.phone')}}</small>
-                        +88 (0) 202 0000 001
+                        <a href="tel:+77270000000">+7 727 000 00 00</a>
                     </div>
                 </div>
                 <div class="col-md-auto">
                     <!-- Topbar Language Dropdown Start -->
-                    <div class="dropdown d-inline-flex lang-toggle shadow-sm">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle-mob text-dark" href="index.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Русский <i class="icofont-rounded-down"></i></a>
-                                <ul class="dropdown-menu dropdownhover-bottom" aria-labelledby="dropdown03">
-                                    <li><a class="dropdown-item" href="index.html">English</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <div class="dropdown d-inline-flex lang-toggle shadow-sm collapse navbar-collapse"
+                         data-hover="dropdown">
+
+                        @switch($locale)
+                            @case('ru')
+                            @if (\Request::route()->getName() == 'home')
+                                <a href="#" class="dropdown-toggle btn" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false" data-hover="dropdown"
+                                   data-animations="slideInUp slideInUp slideInUp slideInUp">
+                                    <img src="{{asset('img/flag_ru.png')}}" alt="" class="dropdown-item-icon">
+                                    <span class="d-inline-block d-lg-none">RU</span>
+                                    <span class="d-none d-lg-inline-block">{{trans('header.lang.ru')}}</span>
+                                    <i class="icofont-rounded-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdownhover-bottom dropdown-menu-right" role="menu">
+                                    <a class="dropdown-item" href="{{ url('/en/'.stristr(Request::url(), 'home', true)) }}">{{trans('header.lang.en')}}</a>
+                                </div>
+{{--                            @elseif(\Request::route()->getName() == 'post')--}}
+{{--                                <li><a class="lang"--}}
+{{--                                       href="{{ url('/kz/'.stristr(Request::url(), 'post', false)) }}">KZ</a>--}}
+{{--                                </li>--}}
+{{--                            @elseif(\Request::route()->getName() == 'home')--}}
+{{--                                <li><a class="lang"--}}
+{{--                                       href="{{ url('/kz/'.stristr(Request::url(), 'home', true)) }}">KZ</a>--}}
+{{--                                </li>--}}
+                            @else
+                                <a href="#" class="dropdown-toggle btn" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false" data-hover="dropdown"
+                                   data-animations="slideInUp slideInUp slideInUp slideInUp">
+                                    <img src="{{asset('img/flag_us.png')}}" alt="" class="dropdown-item-icon">
+                                    <span class="d-inline-block d-lg-none">RU</span>
+                                    <span class="d-none d-lg-inline-block">{{trans('header.lang.ru')}}</span>
+                                    <i class="icofont-rounded-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdownhover-bottom dropdown-menu-right" role="menu">
+                                    <a class="dropdown-item" href="{{ url('/en/'.Request::route()->getName()) }}">{{trans('header.lang.en')}}</a>
+                                </div>
+                            @endif
+                            @break
+                            @case('en')
+                            @if(\Request::route()->getName() == 'home')
+                                <a href="#" class="dropdown-toggle btn" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false" data-hover="dropdown"
+                                   data-animations="slideInUp slideInUp slideInUp slideInUp">
+                                    <img src="{{asset('img/flag_us.png')}}" alt="" class="dropdown-item-icon">
+                                    <span class="d-inline-block d-lg-none">US</span>
+                                    <span class="d-none d-lg-inline-block">{{trans('header.lang.en')}}</span>
+                                    <i class="icofont-rounded-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdownhover-bottom dropdown-menu-right" role="menu">
+                                    <a class="dropdown-item" href="{{ url('/ru/'.stristr(Request::url(), 'home', true)) }}">{{trans('header.lang.ru')}}</a>
+                                </div>
+{{--                            @elseif (\Request::route()->getName() == 'page')--}}
+{{--                                <li><a class="lang"--}}
+{{--                                       href="{{ url('/ru/'.stristr(Request::url(), 'page', false)) }}">RU</a>--}}
+{{--                                </li>--}}
+{{--                            @elseif(\Request::route()->getName() == 'post')--}}
+{{--                                <li><a class="lang"--}}
+{{--                                       href="{{ url('/ru/'.stristr(Request::url(), 'post', false)) }}">RU</a>--}}
+{{--                                </li>--}}
+                            @else
+                                <a href="#" class="dropdown-toggle btn" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false" data-hover="dropdown"
+                                   data-animations="slideInUp slideInUp slideInUp slideInUp">
+                                    <img src="{{asset('img/flag_us.png')}}" alt="" class="dropdown-item-icon">
+                                    <span class="d-inline-block d-lg-none">US</span>
+                                    <span class="d-none d-lg-inline-block">{{trans('header.lang.en')}}</span>
+                                    <i class="icofont-rounded-down"></i>
+                                </a>
+                                <div class="dropdown-menu dropdownhover-bottom dropdown-menu-right" role="menu">
+                                    <a class="dropdown-item" href="{{ url('/ru/'.Request::route()->getName()) }}">{{trans('header.lang.ru')}}</a>
+                                </div>
+                            @endif
+                            @break
+                        @endswitch
                     </div>
                     <!-- Topbar Language Dropdown End -->
                     <div class="d-inline-flex request-btn ml-2">
@@ -61,10 +127,10 @@
             </button>
             <!-- Toggle Button End -->
             <!-- Topbar Request Quote End -->
-            <div class="collapse navbar-collapse" id="navbarCollapse" data-hover="dropdown">
+            <div class="collapse navbar-collapse" data-hover="dropdown">
                 <ul class="navbar-nav ml-auto  ">
-                    <li class="menu-item"><a title="" href="#">{{trans('header.home')}}</a></li>
-                    <li class="menu-item"><a title="" href="#">{{trans('header.about')}}</a></li>
+                    <li class="menu-item"><a title="" href="{{route('home')}}">{{trans('header.home')}}</a></li>
+                    <li class="menu-item"><a title="" href="{{route('about')}}">{{trans('header.about')}}</a></li>
                     <li class="menu-item"><a title="" href="#">{{trans('header.services')}}</a></li>
                     <li class="menu-item"><a title="" href="#">{{trans('header.cars')}}</a></li>
                     <li class="menu-item"><a title="" href="#">{{trans('header.contacts')}}</a></li>

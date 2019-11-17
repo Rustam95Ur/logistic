@@ -10,7 +10,6 @@
     <script src="{{asset('js/wp-emoji-release.min.js')}}"
             type="text/javascript" defer=""></script>
     <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
-    <link rel="stylesheet"  href="{{asset('css/styles.css')}}" media="all">
     <link rel="stylesheet"  href="{{asset('css/logistic.css')}}" media="all">
     <link rel="stylesheet"  href="{{asset('css/style.css')}}" media="all">
     <link rel="stylesheet"  href="{{asset('css/animate.min.css')}}" media="all">
