@@ -1424,6 +1424,7 @@ label.error {
 }
 
 .Header {
+    margin-top: 100px;
     position: relative;
     height: 80vh;
     display: block;
