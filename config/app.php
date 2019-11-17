@@ -80,7 +80,14 @@ return [
     |
     */
 
-    'locale' => 'en',
+
+    'locale' => 'ru',
+
+    'locales' =>[
+        'ru'=>['name'=>'ru', 'db_prefix','ru_','locale' => 'ru_RU.utf8'],
+        'kg'=>['name'=>'kg','db_prefix' => 'kg_', 'locale' => 'ky_KG.utf8'],
+        'en'=>['name'=>'en','db_prefix' => 'en_', 'locale' => 'en_US.utf8'],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +100,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +113,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'ru_RU',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,6 +176,7 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Providers\LocaleServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,

@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', 'Home\BaseController@index')->name('home');
+Route::group([
+    'middleware' => ['web'],
+    'prefix' => Config::get('route_prefix')
+], function () {
+    Route::get('/', 'Home\BaseController@index')->name('home');
 
-
+});
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
