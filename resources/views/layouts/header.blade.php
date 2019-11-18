@@ -15,6 +15,11 @@
                         <small class="txt-black">{{trans('header.phone')}}</small>
                         <a href="tel:+77270000000">+7 727 000 00 00</a>
                     </div>
+                    <div class="top-text">
+                        <small class="txt-black">{{trans('header.social')}}</small>
+                        <a href="#"><i class="icofont-instagram"></i></a>
+                        <a href="#"><i class="icofont-facebook"></i></a>
+                    </div>
                 </div>
                 <div class="col-md-auto">
                     <!-- Topbar Language Dropdown Start -->

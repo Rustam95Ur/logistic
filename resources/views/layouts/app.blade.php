@@ -212,7 +212,7 @@
         </div>
     </div>
 </div>
-<a id="mkdf-back-to-top" href="#" class="off on"><i class="icofont-rounded-up"></i></a>
+<a id="mkdf-back-to-top" href="#" class="off on text-white"><i class="icofont-rounded-up"></i></a>
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/bootstrap-dropdownhover.min.js')}}"></script>

@@ -6,12 +6,12 @@
                 <div class="Header-background"></div>
                 <div class="Header-content">
                     <div class="Header-hero">
-                        <h1>The best app you've <br/> ever seen</h1>
-                        <p>You'll be blown away with all it does</p>
-                        <button class="btn-theme bg-white light">Sign up</button>
+                        {{--<h1>The best app you've <br/> ever seen</h1>--}}
+                        <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг</p>
+                        <button class="btn-theme bg-white light" role="button" data-toggle="modal" data-target="#request_popup">Оставить заявку</button>
                     </div>
                     <div class="Header-visuals">
-                        <img src="{{asset('img/forklift_Image.png')}}">
+                        <img src="{{asset('img/logo-region.png')}}">
                     </div>
                 </div>
             </div>

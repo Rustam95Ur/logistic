@@ -11,7 +11,7 @@
             </nav>
             <h1>{{trans('header.about')}}</h1>
             <div class="breadcrumbs-description">
-                Meet the amazing team behind this project and find out more about how we work.
+                активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг
             </div>
         </div>
     </div>
@@ -20,13 +20,13 @@
             <div class="row align-items-center">
                 <div class="col-md-6 wow fadeInLeft" data-wow-duration="0" data-wow-delay="0s">
                     <h2 class="mb-4 fw-7 txt-blue">
-                        About <span class="fw-6 txt-orange"></span>
+                        {{trans('about.about')}} <span class="fw-6 txt-orange"></span>
                     </h2>
-                    <p>Energistically utilize team driven niche markets rather than leveraged platforms. Monotonectally
-                        restore tactical ``outside the box`` thinking and technically sound deliverables.</p>
-                    <p>Compellingly develop fully researched process improvements through innovative opportunities.
-                        Credibly productize highly efficient potentialities for vertical core competencies. Quickly
-                        maintain pandemic experiences rather than low-risk high-yield processes.</p>
+                    <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг</p>
+                    <p>Наша компания предоставляет транспортные услуги по перевозки грузов по г. Алматы, Казахстану и Китай.
+
+
+                        Мы поможем Вам выбрать подходящий автотранспорт под любые габариты Вашего груза</p>
                 </div>
                 <div class="col-md-6 wow fadeInRight" data-wow-duration="0" data-wow-delay="0s"
                      style="visibility: visible; animation-delay: 0s; animation-name: fadeInRight;">
@@ -44,7 +44,7 @@
                 <div class="col-lg-6 col-12">
                     <div class="p-5 about-whoose">
                         <h1 class="heading-main text-left mb-4">
-                            <span>Why Choose</span>
+                            <span>{{trans('about.choose')}}</span>
                         </h1>
                         <ul class="list-unstyled icons-listing theme-orange w-half mb-0">
                             <li class="wow fadeInUp">
@@ -85,8 +85,8 @@
         <div class="container">
             <div class="col-sm-12">
                 <h1 class="heading-main">
-                    <span>Face Behind Logzee</span>
-                    Our Team
+                    <span>Region Логистик</span>
+                    {{trans('about.our_team')}}
                 </h1>
             </div>
             <div class="row pb-4">
@@ -124,8 +124,8 @@
             <div class="row">
                 <div class="col-sm-12 wow fadeInDown">
                     <h1 class="heading-main">
-                        <span>SOME OF OUR</span>
-                        Clients
+                        {{--<span>SOME OF OUR</span>--}}
+                        {{trans('about.clients')}}
                     </h1>
                 </div>
                 <div class="col-sm-12 wow fadeInUp">
@@ -280,8 +280,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h1 class="heading-main">
-                        <span>Frequently Asked</span>
-                        Questions
+                        <span>{{trans('about.frequently_asked')}}</span>
+                        {{trans('about.questions')}}
                     </h1>
                 </div>
                 <div class="col-sm-12 col-md-6 wow fadeInUp" >
@@ -326,16 +326,16 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 col-md-12 mb-0 wow slideInUp">
-                    <h4 class="h4-xl">Interested in working with Logzee?</h4>
+                    <h4 class="h4-xl">Заинтеремованы работать с Region Логистик?</h4>
                 </div>
                 <div class="col wow slideInUp">
                     <div class="center-text">
-                        We don’t just manage suppliers, we micro-manage them. We have a consultative, personalized
-                        approach
+                        Мы предоставляем индивидуальный подход для каждого клиента! <br>
+                        Оставте заявку и мы вам перезвоним
                     </div>
                 </div>
                 <div class="col-sm-auto wow slideInUp">
-                    <a href="#" class="btn btn-theme bg-white bordered">Get In Touch <i
+                    <a href="#" class="btn btn-theme bg-white bordered" role="button" data-toggle="modal" data-target="#request_popup">Интересно <i
                             class="icofont-rounded-right"></i></a>
                 </div>
             </div>

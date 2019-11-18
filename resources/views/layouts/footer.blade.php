@@ -8,14 +8,13 @@
                         <div class="logo-footer">
                             <img class="alignnone size-full" src="{{asset('img/logo_footer.png')}}" alt="" width="147" height="53">
                         </div>
-                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum
-                            auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                        <p>Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus,
-                            congue .</p>
-                        <h3 class="footer-heading">We’re Social</h3>
+                        <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг</p>
+                        {{--<p>Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus,--}}
+                            {{--congue .</p>--}}
+                        <h3 class="footer-heading">Наши социальные сети</h3>
                         <div class="social-icons">
                             <a href="#"><i class="icofont-facebook"></i></a>
-                            <a href="#"><i class="icofont-twitter"></i></a>
+                            <a href="#"><i class="icofont-instagram"></i></a>
                             <a href="#"><i class="icofont-whatsapp"></i></a>
                             <a href="#"><i class="icofont-google-plus"></i></a>
                         </div>
@@ -84,15 +83,15 @@
         <div class="container">
             <div class="row text-md-left text-center">
                 <div class="col-sm-12 col-md-6 copyright-links">
-                    <a href="#">Privacy Policy</a>
+                    <a href="#" class="text-white">Privacy Policy</a>
                     <span>|</span>
-                    <a href="#">CONTACT</a>
+                    <a href="#" class="text-white">CONTACT</a>
                     <span>|</span>
-                    <a href="#">FAQS</a>
+                    <a href="#" class="text-white">FAQS</a>
                 </div>
-                <div class="col-sm-12 col-md-6 text-md-right text-center">
+                <div class="col-sm-12 col-md-6 text-md-right text-center text-white">
                     Designed by
-                    <a href="#" rel="nofollow">SMARTINNOVATION GROUP</a>
+                    <a href="#" rel="nofollow" class="text-white text-capitalize">SMARTINNOVATION GROUP</a>
                     © 2019 All Rights Reserved
                 </div>
 
