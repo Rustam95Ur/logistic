@@ -901,8 +901,6 @@
                 </div>
             </div>
             <div id="map-holder" class="pos-rel">
-                <iframe style="width:100%;border:0;" src="{{asset('img/')}}embed.html"
-                        height="400" allowfullscreen=""></iframe>
             </div>
         </section>
         <!-- Main Footer End -->
@@ -916,4 +914,18 @@
         <!-- Request Modal -->
         <!-- Back To Top Start -->
     </main>
+    <script>
+        function initMap() {
+            // The location of Uluru
+            var uluru = {lat: -25.344, lng: 131.036};
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map-holder'), {zoom: 4, center: uluru});
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
 @endsection
