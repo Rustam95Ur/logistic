@@ -3,7 +3,6 @@
 
 namespace App\Http\Controllers\Page;
 
-
 use App\Http\Controllers\Controller;
 
 class BaseController extends Controller
@@ -13,4 +12,5 @@ class BaseController extends Controller
     {
         return view('page.about');
     }
+
 }

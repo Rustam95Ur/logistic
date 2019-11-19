@@ -18,6 +18,8 @@ Route::group([
 
     Route::get('/', 'Home\BaseController@index')->name('home');
     Route::get('/about', 'Page\BaseController@about')->name('about');
+    Route::get('/services', 'Page\ServiceController@index')->name('services');
+    Route::get('/service/{id}', 'Page\ServiceController@show')->name('service');
 
 });
 Route::group(['prefix' => 'admin'], function () {

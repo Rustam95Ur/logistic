@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="{{asset('img/logo_footer.png')}}">
-    <title>Logistic</title>
+    <title>{{Voyager::setting('site.title')}}</title>
     <link rel="dns-prefetch" href="http://fonts.googleapis.com/">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{{asset('js/wp-emoji-release.min.js')}}"
@@ -252,6 +252,13 @@
 <script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('js/wp-embed.min.js')}}"></script>
 <script src="{{asset('js/dist/js_composer_front.min.js')}}"></script>
-
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/121022/jquery.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready( function() {
+        jQuery('#grid-container').cubeportfolio({
+            // options
+        });
+    });
+</script>
 </body>
 </html>

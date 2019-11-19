@@ -267,7 +267,7 @@
                 </div>
                 <div class="cbp cbp-caption-active cbp-caption-zoom cbp-ready"
                      style="height: 786px;">
-                    <div class="cbp-wrapper-outer">
+                    <div class="cbp-wrapper-outer" id="grid-container">
                         <div class="cbp-wrapper">
                             <div class="cbp-item lifestyle outstanding travel"
                                  style="width: 277px; left: 0px; top: 0px;">

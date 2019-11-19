@@ -136,7 +136,7 @@
                 <ul class="navbar-nav ml-auto  ">
                     <li class="menu-item"><a title="" href="{{route('home')}}">{{trans('header.home')}}</a></li>
                     <li class="menu-item"><a title="" href="{{route('about')}}">{{trans('header.about')}}</a></li>
-                    <li class="menu-item"><a title="" href="#">{{trans('header.services')}}</a></li>
+                    <li class="menu-item"><a title="" href="{{route('services')}}">{{trans('header.services')}}</a></li>
                     <li class="menu-item"><a title="" href="#">{{trans('header.cars')}}</a></li>
                     <li class="menu-item"><a title="" href="#">{{trans('header.contacts')}}</a></li>
                 </ul>
