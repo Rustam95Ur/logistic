@@ -11,7 +11,7 @@
                         <button class="btn-theme bg-white light" role="button" data-toggle="modal" data-target="#request_popup">Оставить заявку</button>
                     </div>
                     <div class="Header-visuals">
-                        <img src="{{asset('img/logo-region.png')}}">
+                        <img src="{{asset('img/logo-region.png')}}" >
                     </div>
                 </div>
             </div>
@@ -22,18 +22,14 @@
             <div class="container pos-rel">
                 <div class="row">
                     <div class="col-md-12 col-lg-6">
-                        <p><img src="{{asset('img/years_img.png')}}" alt="" class="mb-5"></p>
-                        <p>Having implemented a variety of ecological, economic and social initiatives, the family-owned
-                            company, which has a history going back 500 years, is considered a pioneer in terms of
-                            sustainable business today.<br>
-                            The Corporate Movie of the transport and logistics service provider Globax Logistics. GL not
-                            only moves goods and data, but also people who are connected to the orange network.</p>
-                        <div class="img-icon mt-4 d-flex align-items-center">
-                            <img src="{{asset('img/team-1.jpg')}}" alt="image">
-                            <h3> John Morise
-                                <span>Founder &amp; CEO</span>
-                            </h3>
-                        </div>
+                        <p><img src="{{asset('img/logo-region.png')}}" alt="" class="mb-5" width="200px"></p>
+                        <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг</p>
+                        {{--<div class="img-icon mt-4 d-flex align-items-center">--}}
+                            {{--<img src="{{asset('img/team-1.jpg')}}" alt="image">--}}
+                            {{--<h3> John Morise--}}
+                                {{--<span>Founder &amp; CEO</span>--}}
+                            {{--</h3>--}}
+                        {{--</div>--}}
                     </div>
                     <!-- Spacer For Medium -->
                     <div class="w-100 spacer-50 d-none d-md-block d-lg-none d-sm-none"></div>
@@ -95,16 +91,14 @@
                     <div class="col-md-6 ml-auto why-choose wow fadeInRight">
                         <!-- Heading Main -->
                         <h1 class="heading-main text-left wow fadeInDown">
-                            <span>ABOUT US</span>
-                            Welcome To Logzee Family
+                            <span>{{trans('about.about')}}</span>
+                            {{trans('about.welcome')}}
                         </h1>
                         <!-- Heading Main -->
-                        <p>Energistically utilize team driven niche markets rather than leveraged platforms.
-                            Monotonectally
-                            restore tactical "outside the box" thinking and technically sound deliverables.</p>
-                        <p>Compellingly develop fully researched process improvements through innovative opportunities.
-                            Credibly productize highly efficient potentialities for vertical core competencies. Quickly
-                            maintain pandemic experiences rather than low-risk high-yield processes.</p>
+                        <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг</p>
+                        {{--<p>Compellingly develop fully researched process improvements through innovative opportunities.--}}
+                            {{--Credibly productize highly efficient potentialities for vertical core competencies. Quickly--}}
+                            {{--maintain pandemic experiences rather than low-risk high-yield processes.</p>--}}
                         <div class="skillbar-wrap">
                             <div class="clearfix">
                                 Logistics
@@ -150,8 +144,10 @@
                                 <div class="skillbar-bar"></div>
                             </div>
                         </div>
+                        <a href="{{route('about')}}" class="btn-theme bg-orange">Узнать подробнее ></a>
                     </div>
                 </div>
+
             </div>
         </section>
         <section class="bg-white wide-tb-100">
@@ -162,8 +158,8 @@
                     </div>
                     <div class="col-sm-12 wow fadeInDown">
                         <h1 class="heading-main">
-                            <span>Our Goodness</span>
-                            What Makes Us Special
+                            {{--<span>Our Goodness</span>--}}
+                            {{trans('about.special')}}
                         </h1>
                     </div>
                     <div class="col-md-6 ml-auto">
@@ -259,8 +255,8 @@
                     <!-- Heading Main -->
                     <div class="col-sm-12 wow fadeInDown">
                         <h1 class="heading-main">
-                            <span>Our Gallery</span>
-                            Photo Showcase
+                            {{--<span>Our Gallery</span>--}}
+                            {{trans('about.gallery')}}
                         </h1>
                     </div>
                     <!-- Heading Main -->
@@ -460,8 +456,8 @@
                 <div class="row piecharts" id="pie-charts">
                     <div class="col-sm-12 wow fadeInDown">
                         <h1 class="heading-main">
-                            <span>Looking for more?</span>
-                            Watch Our Intro Video
+                            <span>Нужно больше информации?</span>
+                            Посмотрите наш видео-ролик
                         </h1>
                     </div>
                     <div class="col-md-6 offset-md-3">
@@ -512,8 +508,8 @@
                 <div class="row">
                     <div class="col-sm-12 wow fadeInDown">
                         <h1 class="heading-main">
-                            <span>What Our</span>
-                            Customers Saying
+                            {{--<span>What Our</span>--}}
+                            Что говорят наши клиенты
                         </h1>
                     </div>
                     <div class="col-sm-12">
@@ -678,22 +674,22 @@
                 </div>
             </div>
         </section>
-        <section class="wide-tb-80 bg-navy-blue callout-style-1 wow fadeInUp">
+        <section class="wide-tb-80 bg-scroll bg-img-6 pos-rel callout-style-1">
+            <div class="bg-overlay blue opacity-60"></div>
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-12 mb-0">
-                        <h4 class="h4-xl">Interested in working with Logzee?</h4>
+                    <div class="col-lg-4 col-md-12 mb-0 wow slideInUp">
+                        <h4 class="h4-xl">Заинтеремованы работать с Region Логистик?</h4>
                     </div>
-                    <div class="col">
+                    <div class="col wow slideInUp">
                         <div class="center-text">
-                            We don’t just manage suppliers, we micro-manage them. We have a consultative, personalized
-                            approach
+                            Мы предоставляем индивидуальный подход для каждого клиента! <br>
+                            Оставте заявку и мы вам перезвоним
                         </div>
                     </div>
-                    <div class="col-sm-auto">
-                        <a href="#" class="btn-theme bg-white light">Get In Touch <i
-                                class="icofont-rounded-right"></i>
-                        </a>
+                    <div class="col-sm-auto wow slideInUp">
+                        <a href="#" class="btn btn-theme bg-white bordered" role="button" data-toggle="modal" data-target="#request_popup">Интересно <i
+                                    class="icofont-rounded-right"></i></a>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@
                 <div>
                     <div class="textwidget">
                         <div class="logo-footer">
-                            <img class="alignnone size-full" src="{{asset('img/logo_footer.png')}}" alt="" width="147" height="53">
+                            <img class="alignnone size-full" src="{{asset('img/logo-region.png')}}" alt="" width="147" height="130">
                         </div>
                         <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг</p>
                         {{--<p>Vivamus ac ultrices diam, vitae accumsan tellus. Integer sollicitudin vulputate lacus,--}}
@@ -25,51 +25,16 @@
             <div class="col-lg-6 col-md-6 wow fadeInLeft">
                 <div id="text-8">
                     <div class="textwidget">
-                        <h3 class="footer-heading">Recent Post</h3>
+                        <h2 class="footer-heading">Наши Контакты</h2>
                         <div class="blog-list-footer">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="media">
-                                        <div class="post-thumb">
-                                            <img class="rounded-circle alignnone size-full"
-                                                 src="{{asset('img/post_thumb_1.jpg')}}" alt="" width="400" height="400">
-                                        </div>
-                                        <div class="media-body post-text">
-                                            <h5 class="mb-3 h5-md">
-                                                <a href="#">Liberalisation of air cargo</a>
-                                            </h5>
-                                            <p>Far far away, behind the word mountains, far from the countries.</p>
-                                            <div class="comment-box">
-                                                <i class="icofont-ui-calendar"></i>
-                                                04.10.2013
-                                                <a href="#">
-                                                    <i class="icofont-speech-comments"></i> 25
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media">
-                                        <div class="post-thumb">
-                                            <img class="alignnone size-full rounded-circle"
-                                                src="{{asset('img/post_thumb_2.jpg')}}" alt="" width="400" height="400"></div>
-                                        <div class="media-body post-text">
-                                            <h5 class="mb-3 h5-md">
-                                                <a href="#">New Ocean Freight Rules</a>
-                                            </h5>
-                                            <p>Far far away, behind the word mountains, far from the countries.</p>
-                                            <div class="comment-box">
-                                                <i class="icofont-ui-calendar"></i>
-                                                04.10.2013
-                                                <a href="#">
-                                                    <i class="icofont-speech-comments"></i> 25
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                            <div class="col">
+                                <h6>Казакстан, Алматы</h6>
+                                <h6>мкр Улжан 1 ,Жана жол 25.</h6>
+                                <h6><i class="icofont-phone"></i> +7 705 663 06 63 - Аяулым</h6>
+                                <h6><i class="icofont-phone"></i> +7 707 766 78 34 - Жаркынай</h6>
+                                <h6><i class="icofont-email"></i> <a href="#">region-lg@mail.ru</a></h6>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
