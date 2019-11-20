@@ -1428,7 +1428,7 @@ label.error {
     position: relative;
     height: 80vh;
     display: block;
-    /*background-image: url("../img/general-cargo-logistcs-services.jpg");*/
+    background-image: url("../img/home-bg.jpg");
 }
 .Header-background {
     position: absolute;
