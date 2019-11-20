@@ -766,7 +766,7 @@ h2.h2-xl { font-size: 1.5rem; }     /* 24px */
     transform: rotate(360deg);
 }
 .request_popup .bg-img-7{
-    background-image: url(../img/bg_8.jpg);
+    background-image: url(../img/request-img.jpg);
 }
 .center-head {
     color: #202120;
@@ -842,12 +842,12 @@ h2.h2-xl { font-size: 1.5rem; }     /* 24px */
 }
 footer{
     font-size: 0.875rem;
-    color: #666;
+    color: #292929;
     line-height: 1.714;
 }
 .logo-footer{
-    width: 155px;
-    margin-bottom: 25px;
+    width: 35%;
+    margin-bottom: 10px;
 }
 
 .footer-heading {
@@ -1613,4 +1613,7 @@ div.wpcf7 input[type="file"]:disabled {
     padding: 7rem 0;
     background-position: center center !important;
     margin-top: 136px;
+}
+.user-info input {
+    margin-bottom: 20px;
 }

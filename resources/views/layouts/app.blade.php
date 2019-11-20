@@ -10,25 +10,27 @@
     <script src="{{asset('js/wp-emoji-release.min.js')}}"
             type="text/javascript" defer=""></script>
     <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
-    <link rel="stylesheet"  href="{{asset('css/logistic.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/style.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/animate.min.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/base.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/bootstrap.min.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/bootstrap-dropdownhover.min.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/cubeportfolio.min.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('rev-slider/revolution/fonts/font-awesome/css/font-awesome.min.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/icofont.min.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/js_composer.min.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('rev-slider/revolution/css/layers.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/magnific-popup.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('rev-slider/revolution/css/navigation.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/owl.carousel.min.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('rev-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/responsive.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('rev-slider/revolution/css/settings.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/shortcodes.css')}}" media="all">
-    <link rel="stylesheet"  href="{{asset('css/slick.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/logistic.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/animate.min.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/base.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/bootstrap-dropdownhover.min.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/cubeportfolio.min.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('rev-slider/revolution/fonts/font-awesome/css/font-awesome.min.css')}}"
+          media="all">
+    <link rel="stylesheet" href="{{asset('css/icofont.min.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/js_composer.min.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('rev-slider/revolution/css/layers.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('rev-slider/revolution/css/navigation.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('rev-slider/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')}}"
+          media="all">
+    <link rel="stylesheet" href="{{asset('css/responsive.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('rev-slider/revolution/css/settings.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/shortcodes.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/slick.css')}}" media="all">
     <script src="{{asset('js/jquery/jquery.js')}}"></script>
     <script src="{{asset('js/jquery/jquery-migrate.min.js')}}"></script>
 </head>
@@ -69,7 +71,7 @@
     </form>
 </div>
 <!-- Request Modal -->
-<div class="modal fade" id="request_popup"  aria-hidden="true">
+<div class="modal fade" id="request_popup" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered request_popup" role="document">
         <div class="modal-content">
             <div class="modal-body p-0">
@@ -85,123 +87,85 @@
                             </div>
                             <div class="col-md-7 col-12">
                                 <div class="px-3 m-5">
-                                    <h2 class="h2-xl mb-4 fw-6">Request A Quote</h2>
-                                    <div role="form" class="wpcf7" id="wpcf7-f237-o1" lang="en-US" dir="ltr">
-                                        <div class="screen-reader-response"></div>
-                                        <form action="#wpcf7-f237-o1"
-                                              method="post"
-                                              class="wpcf7-form" novalidate="novalidate">
-                                            <div style="display: none;">
-                                                <input type="hidden" name="_wpcf7" value="237">
-                                                <input type="hidden" name="_wpcf7_version" value="5.0.2">
-                                                <input type="hidden" name="_wpcf7_locale" value="en_US">
-                                                <input type="hidden" name="_wpcf7_unit_tag"
-                                                       value="wpcf7-f237-o1">
-                                                <input type="hidden" name="_wpcf7_container_post" value="0">
+                                    <h2 class="h2-xl mb-4 fw-6">{{trans('request.title')}}</h2>
+                                    <div class="screen-reader-response"></div>
+                                    <form action="#" method="post" class="wpcf7-form">
+                                        @csrf
+                                        <div class="rounded-field">
+                                            <div class="form-row mb-4">
+                                                <div class="col">
+                                                    <select name="freight_type" class="custom-select">
+                                                        <option disabled
+                                                                selected>{{trans('request.freight_type')}}</option>
+                                                        <option value="1">Type 1</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col">
+                                                    <select name="incoterms" class="custom-select">
+                                                        <option disabled
+                                                                selected>{{trans('request.incoterms')}}</option>
+                                                        <option
+                                                        <option value="1">Type 1</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                            <div class="rounded-field">
-                                                <div class="form-row mb-4">
-                                                    <div class="col">
-                                                            <span class="wpcf7-form-control-wrap package-1"><select
-                                                                    name="package-1"
-                                                                    class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required custom-select"
-                                                                    aria-required="true" aria-invalid="false"><option
-                                                                        value="Freight Type">Freight Type</option><option
-                                                                        value="Type 1">Type 1</option><option
-                                                                        value="Type 2">Type 2</option><option
-                                                                        value="Type 3">Type 3</option><option
-                                                                        value="Type 4">Type 4</option></select></span>
-                                                    </div>
-                                                    <div class="col">
-                                                            <span class="wpcf7-form-control-wrap package-2"><select
-                                                                    name="package-2"
-                                                                    class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required custom-select"
-                                                                    aria-required="true" aria-invalid="false"><option
-                                                                        value="Incoterms">Incoterms</option><option
-                                                                        value="Type 1">Type 1</option><option
-                                                                        value="Type 2">Type 2</option><option
-                                                                        value="Type 3">Type 3</option><option
-                                                                        value="Type 4">Type 4</option></select></span>
-                                                    </div>
+                                            <div class="form-row mb-4">
+                                                <div class="col">
+                                                    <input type="text" name="city_departure" value="" size="40"
+                                                           class="form-control"
+                                                           placeholder="{{trans('request.city_departure')}}">
                                                 </div>
-                                                <div class="form-row mb-4">
-                                                    <div class="col">
-                                                            <span class="wpcf7-form-control-wrap city-departure"><input
-                                                                    type="text" name="city-departure" value="" size="40"
-                                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
-                                                                    aria-required="true" aria-invalid="false"
-                                                                    placeholder="City of departure"></span>
-                                                    </div>
-                                                    <div class="col">
-                                                            <span class="wpcf7-form-control-wrap delivery-city"><input
-                                                                    type="text" name="delivery-city" value="" size="40"
-                                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
-                                                                    aria-required="true" aria-invalid="false"
-                                                                    placeholder="Delivery city"></span>
-                                                    </div>
+                                                <div class="col">
+                                                    <input type="text" name="delivery_city" value="" size="40"
+                                                           class="form-control"
+                                                           placeholder="{{trans('request.delivery_city')}}">
                                                 </div>
-                                                <div class="form-row mb-4">
-                                                    <div class="col">
-                                                            <span class="wpcf7-form-control-wrap gross-weight"><input
-                                                                    type="text" name="gross-weight" value="" size="40"
-                                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
-                                                                    aria-required="true" aria-invalid="false"
-                                                                    placeholder="Total gross weight (KG)"></span>
-                                                    </div>
-                                                    <div class="col">
-                                                            <span class="wpcf7-form-control-wrap dimension"><input
-                                                                    type="text" name="dimension" value="" size="40"
-                                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
-                                                                    aria-required="true" aria-invalid="false"
-                                                                    placeholder="Dimension"></span>
-                                                    </div>
+                                            </div>
+                                            <div class="form-row mb-4">
+                                                <div class="col">
+                                                    <input type="text" name="gross_weight" value="" size="40"
+                                                           class="form-control"
+                                                           placeholder="{{trans('request.gross_weight')}}">
                                                 </div>
-                                                <div class="form-row">
-                                                    <div class="col">
-                                                        <div class="center-head"><span
-                                                                class="bg-blue-light txt-orange">Your Personal Details</span>
-                                                        </div>
-                                                    </div>
+                                                <div class="col">
+                                                    <input type="text" name="dimension" value="" size="40"
+                                                           class="form-control"
+                                                           placeholder="{{trans('request.dimension')}}">
                                                 </div>
-                                                <div class="form-row mb-4">
-                                                    <div class="col">
-                                                            <span class="wpcf7-form-control-wrap your-name"><input
-                                                                    type="text" name="your-name" value="" size="40"
-                                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
-                                                                    aria-required="true" aria-invalid="false"
-                                                                    placeholder="Your Name"></span><br>
-                                                        <span class="wpcf7-form-control-wrap your-email"><input
-                                                                type="email" name="your-email" value=""
-                                                                size="40"
-                                                                class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control"
-                                                                aria-required="true" aria-invalid="false"
-                                                                placeholder="Email"></span><br>
-                                                        <span class="wpcf7-form-control-wrap your-number"><input
-                                                                type="text" name="your-number" value=""
-                                                                size="40"
-                                                                class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
-                                                                aria-required="true" aria-invalid="false"
-                                                                placeholder="Phone Number"></span>
-                                                    </div>
-                                                    <div class="col">
-                                                            <span class="wpcf7-form-control-wrap textarea-465"><textarea
-                                                                    name="textarea-465" cols="40" rows="10"
-                                                                    class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form-control"
-                                                                    aria-required="true" aria-invalid="false"
-                                                                    placeholder="Message"></textarea></span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="col pt-3">
-                                                        <input type="submit" value="Send Message"
-                                                               class="wpcf7-form-control wpcf7-submit form-btn btn-theme bg-orange"><span
-                                                            class="ajax-loader"></span>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="center-head"><span
+                                                            class="bg-blue-light txt-orange">{{trans('request.personal_detail')}}</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="wpcf7-response-output wpcf7-display-none"></div>
-                                        </form>
-                                    </div>
+                                            <div class="form-row mb-4">
+                                                <div class="col user-info">
+                                                    <input type="text" name="name" value="" size="40"
+                                                           class="form-control" placeholder="{{trans('request.name')}}">
+
+                                                    <input type="email" name="email" value="" size="40"
+                                                           class="form-control" placeholder="Email">
+
+                                                    <input type="text" name="phone" value="" size="40"
+                                                           class="form-control"
+                                                           placeholder="{{trans('request.phone')}}">
+                                                </div>
+                                                <div class="col">
+                                                        <textarea name="message" cols="40" rows="10"
+                                                                  class="form-control"
+                                                                  placeholder="{{trans('request.message')}}"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col pt-3">
+                                                    <input type="submit" value="{{trans('button.send')}}"
+                                                           class="form-btn btn-theme bg-orange">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -254,7 +218,7 @@
 <script src="{{asset('js/dist/js_composer_front.min.js')}}"></script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/121022/jquery.min.js"></script>
 <script type="text/javascript">
-    jQuery(document).ready( function() {
+    jQuery(document).ready(function () {
         jQuery('#grid-container').cubeportfolio({
             // options
         });

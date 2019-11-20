@@ -113,7 +113,7 @@
     <nav class="navbar navbar-expand-lg bg-transparent-header">
         <div class="container text-nowrap bdr-nav px-0">
             <div class="d-flex mr-auto">
-                <a class="navbar-brand rounded-bottom light-bg" href="">
+                <a class="navbar-brand rounded-bottom light-bg" href="{{route('home')}}">
                     <img src="{{asset('img/logo-region.png')}}" alt="">
                 </a>
             </div>
