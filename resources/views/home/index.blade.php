@@ -39,8 +39,8 @@
                             <div class="col-12 col-md-6">
                                 <div class="icon-box-6">
                                     <i class="icofont-box"></i>
-                                    <h3 class="h3-xs txt-blue">Packaging and Storage</h3>
-                                    <p>Packaging and Storage</p>
+                                    <h3 class="h3-xs txt-blue">100% гарантия за сохранность вашего груза</h3>
+                                    <p>Мы гарантируем 100% сохранность вашего груза</p>
                                     <a href="#" class="btn-arrow bg-navy-blue">
                                         <i class="icofont-swoosh-right"></i>
                                     </a>
@@ -49,8 +49,8 @@
                             <div class="col-12 col-md-6">
                                 <div class="icon-box-6">
                                     <i class="icofont-safety"></i>
-                                    <h3 class="h3-xs txt-blue">Packaging and Storage</h3>
-                                    <p>Packaging and Storage</p>
+                                    <h3 class="h3-xs txt-blue">Скидки</h3>
+                                    <p>Для постоянныж клиентов действуют скидки </p>
                                     <a href="#" class="btn-arrow bg-navy-blue">
                                         <i class="icofont-swoosh-right"></i>
                                     </a>
@@ -60,8 +60,8 @@
                             <div class="col-12 col-md-6">
                                 <div class="icon-box-6">
                                     <i class="icofont-tree-alt"></i>
-                                    <h3 class="h3-xs txt-blue">Packaging and Storage</h3>
-                                    <p>Packaging and Storage</p>
+                                    <h3 class="h3-xs txt-blue">Эко-доставка</h3>
+                                    <p>Эко-доставка</p>
                                     <a href="#" class="btn-arrow bg-navy-blue">
                                         <i class="icofont-swoosh-right"></i>
                                     </a>
@@ -70,8 +70,8 @@
                             <div class="col-12 col-md-6">
                                 <div class="icon-box-6">
                                     <i class="icofont-delivery-time"></i>
-                                    <h3 class="h3-xs txt-blue">Packaging and Storage</h3>
-                                    <p>Packaging and Storage</p>
+                                    <h3 class="h3-xs txt-blue">Доставляем груз бережно в срок </h3>
+                                    <p>Экономия вашего время </p>
                                     <a href="#" class="btn-arrow bg-navy-blue">
                                         <i class="icofont-swoosh-right"></i>
                                     </a>
@@ -101,7 +101,7 @@
                             {{--maintain pandemic experiences rather than low-risk high-yield processes.</p>--}}
                         <div class="skillbar-wrap">
                             <div class="clearfix">
-                                Logistics
+                                Логстика
                             </div>
                             <div class="skillbar" data-percent="75%">
                                 <div class="skillbar-percent">75%</div>
@@ -110,7 +110,7 @@
                         </div>
                         <div class="skillbar-wrap">
                             <div class="clearfix">
-                                Truck Rental
+                                Грузовые авто
                             </div>
                             <div class="skillbar" data-percent="50%">
                                 <div class="skillbar-percent">50%</div>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="skillbar-wrap">
                             <div class="clearfix">
-                                Courier
+                                Курьеры
                             </div>
                             <div class="skillbar" data-percent="95%">
                                 <div class="skillbar-percent">95%</div>
@@ -128,7 +128,7 @@
                         </div>
                         <div class="skillbar-wrap">
                             <div class="clearfix">
-                                Air Transport
+                                Воздушный транспорт
                             </div>
                             <div class="skillbar" data-percent="60%">
                                 <div class="skillbar-percent">60%</div>
@@ -137,7 +137,7 @@
                         </div>
                         <div class="skillbar-wrap">
                             <div class="clearfix">
-                                Support
+                                Поддержка
                             </div>
                             <div class="skillbar" data-percent="95%">
                                 <div class="skillbar-percent">95%</div>
@@ -171,10 +171,8 @@
                                             <i class="icofont-box bg-white"></i>
                                         </div>
                                         <div class="service-inner-content media-body">
-                                            <h4 class="h4-md">Packaging and Storage</h4>
-                                            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                                                cubilia Curae. Praesent pellentesque diam vitae nibh aliquam
-                                                faucibus.</p>
+                                            <h4 class="h4-md">100% гарантия за сохранность вашего груза</h4>
+                                            <p>Мы гарантируем 100% сохранность вашего груза</p>
                                         </div>
                                     </div>
                                 </div>
@@ -186,10 +184,8 @@
                                             <i class="icofont-shield bg-white"></i>
                                         </div>
                                         <div class="service-inner-content media-body">
-                                            <h4 class="h4-md">Safety Quality</h4>
-                                            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                                                cubilia Curae. Praesent pellentesque diam vitae nibh aliquam
-                                                faucibus.</p>
+                                            <h4 class="h4-md">Хранение грузов</h4>
+                                            <p>Обеспечиваем хранение доверенных нам грузов</p>
                                         </div>
                                     </div>
                                 </div>
@@ -201,10 +197,8 @@
                                             <i class="icofont-tree-alt bg-white"></i>
                                         </div>
                                         <div class="service-inner-content media-body">
-                                            <h4 class="h4-md">Safety Quality</h4>
-                                            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                                                cubilia Curae. Praesent pellentesque diam vitae nibh aliquam
-                                                faucibus.</p>
+                                            <h4 class="h4-md">Доставляем груз бережно и в срок</h4>
+                                            <p>Гарантируем доставку вашего груза бережно и в срок</p>
                                         </div>
                                     </div>
                                 </div>
@@ -222,28 +216,28 @@
                         <p><i class="icofont-google-map"></i></p>
                         <span class="counter">15</span>
                         <div>
-                            Our Locations
+                            Местонахождение
                         </div>
                     </div>
                     <div class="col counter-style-1 col-6 col-lg-3 col-sm-6 wow fadeInLeft">
                         <p><i class="icofont-globe"></i></p>
                         <span class="counter">110</span>
                         <div>
-                            Clients Worldwide
+                            Клиентов
                         </div>
                     </div>
                     <div class="col counter-style-1 col-6 col-lg-3 col-sm-6 wow fadeInRight">
                         <p><i class="icofont-vehicle-delivery-van"></i></p>
                         <span class="counter">240</span>
                         <div>
-                            Owned Vehicles
+                            Транспортов
                         </div>
                     </div>
                     <div class="col counter-style-1 col-6 col-lg-3 col-sm-6 wow fadeInRight">
                         <p><i class="icofont-umbrella-alt"></i></p>
                         <span class="counter">2340</span>
                         <div>
-                            Tonnes Transported
+                            Тонн перевезены
                         </div>
                     </div>
                 </div>
