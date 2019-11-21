@@ -56,7 +56,7 @@
                     <div class="media mb-3">
                         <i class="icofont-clock-time mr-3"></i>
                         <div class="media-body">
-                            <div><strong>Пон - Пнт</strong></div>
+                            <div><strong>Понедельник - Пятница</strong></div>
                             <div>9:00  - 6:00</div>
                         </div>
                     </div>

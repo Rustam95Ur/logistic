@@ -11,8 +11,7 @@
             </nav>
             <h1>Наши услуги</h1>
             <div class="breadcrumbs-description">
-                Our global network and full-service team of airfreight and expedited freight professionals are ready to
-                help.
+                Наша компания предоставляет транспортные услуги по перевозки грузов по г. Алматы, Казахстану и Китаю.
             </div>
         </div>
     </div>
@@ -23,16 +22,11 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <h2 class="mb-4 fw-7 txt-blue wow fadeInLeft">
-                            Quality <span class="fw-6 txt-orange">and</span> Performance <br><span
-                                class="fw-6 txt-orange">at the right price</span>
+                            Качество <span class="fw-6 txt-orange">и</span> Время доставки <br><span
+                                class="fw-6 txt-orange">по выгодным ценам</span>
                         </h2>
-                        <p class="wow fadeInLeft">Energistically utilize team driven niche markets rather than leveraged
-                            platforms. Monotonectally restore tactical "outside the box" thinking and technically sound
-                            deliverables. </p>
-                        <p class="wow fadeInLeft">Compellingly develop fully researched process improvements through
-                            innovative opportunities. Credibly productize highly efficient potentialities for vertical
-                            core competencies. Quickly maintain pandemic experiences rather than low-risk high-yield
-                            processes.</p>
+                        <p class="wow fadeInLeft">Наша компания предоставляет транспортные услуги по перевозки грузов по г. Алматы, Казахстану и Китаю. </p>
+                        <p class="wow fadeInLeft">Мы поможем Вам выбрать подходящий автотранспорт под любые габариты Вашего груза</p>
                     </div>
                     <div class="col-md-6">
                     </div>
@@ -47,8 +41,8 @@
                     <!-- Heading Main -->
                     <div class="col-sm-12 wow fadeInDown">
                         <h1 class="heading-main">
-                            <span>what we offer</span>
-                            Our Main Services
+                            <span>{{trans('service.offer')}}</span>
+                            {{trans('service.services')}}
                         </h1>
                     </div>
                     <!-- Heading Main -->
@@ -104,107 +98,66 @@
         <!-- Welcome To Cargo End -->
 
         <!-- What Makes Us Special Start -->
-        <section class="bg-sky-blue wide-tb-100">
+        <section class="bg-white wide-tb-100">
             <div class="container pos-rel">
                 <div class="row">
                     <div class="img-business-man">
                         <img src="{{asset('img/courier-man.png')}}" alt="">
                     </div>
-                    <!-- Heading Main -->
                     <div class="col-sm-12 wow fadeInDown">
                         <h1 class="heading-main">
-                            <span>Our Goodness</span>
-                            What Makes Us Special
+                            {{--<span>Our Goodness</span>--}}
+                            {{trans('about.special')}}
                         </h1>
                     </div>
-                    <!-- Heading Main -->
                     <div class="col-md-6 ml-auto">
                         <div class="row">
-                            <!-- Icon Box 2 -->
                             <div class="col-12 wow fadeInUp">
                                 <div class="icon-box-3 mb-5 bg-sky-blue">
                                     <div class="media">
                                         <div class="service-icon mr-5">
-                                            <i class="icofont-box"></i>
+                                            <i class="icofont-box bg-white"></i>
                                         </div>
                                         <div class="service-inner-content media-body">
-                                            <h4 class="h4-md">Packaging and Storage</h4>
-                                            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                                                cubilia Curae. Praesent pellentesque diam vitae nibh aliquam
-                                                faucibus.</p>
+                                            <h4 class="h4-md">100% гарантия за сохранность вашего груза</h4>
+                                            <p>Мы гарантируем 100% сохранность вашего груза</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Icon Box -->
-                            <!-- Icon Box 2 -->
                             <div class="col-12 wow fadeInUp">
                                 <div class="icon-box-3 mb-5 bg-sky-blue">
                                     <div class="media">
                                         <div class="service-icon mr-5">
-                                            <i class="icofont-shield"></i>
+                                            <i class="icofont-shield bg-white"></i>
                                         </div>
                                         <div class="service-inner-content media-body">
-                                            <h4 class="h4-md">Safety &amp; Quality</h4>
-                                            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                                                cubilia Curae. Praesent pellentesque diam vitae nibh aliquam
-                                                faucibus.</p>
+                                            <h4 class="h4-md">Хранение грузов</h4>
+                                            <p>Обеспечиваем хранение доверенных нам грузов</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Icon Box -->
-                            <!-- Icon Box 2 -->
                             <div class="col-12 wow fadeInUp">
-                                <div class="icon-box-3 bg-sky-blue">
+                                <div class="icon-box-3 mb-5 bg-sky-blue">
                                     <div class="media">
                                         <div class="service-icon mr-5">
-                                            <i class="icofont-tree-alt"></i>
+                                            <i class="icofont-tree-alt bg-white"></i>
                                         </div>
                                         <div class="service-inner-content media-body">
-                                            <h4 class="h4-md">Care for Environment</h4>
-                                            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                                                cubilia Curae. Praesent pellentesque diam vitae nibh aliquam
-                                                faucibus.</p>
+                                            <h4 class="h4-md">Доставляем груз бережно и в срок</h4>
+                                            <p>Гарантируем доставку вашего груза бережно и в срок</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Icon Box -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- What Makes Us Special End -->
-        <!-- Tracking Your Freight Start -->
-        <section class="wide-tb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 ml-lg-auto pos-rel col-md-12">
-                        <!-- Heading Main -->
-                        <h1 class="heading-main text-left">
-                            <span>get updates</span>
-                            Tracking Your Freight
-                        </h1>
-                        <!-- Heading Main -->
-                        <!-- Tracking Form -->
-                        <form class="form-inline tracking">
-                            <input type="text" class="form-control mb-2 mr-sm-2 col" placeholder="Enter order number">
-                            <button type="submit" class="btn btn-theme bg-orange mb-2 ml-3">Check Now <i
-                                    class="icofont-rounded-right"></i></button>
-                        </form>
-                        <!-- Tracking Form -->
-                        <!-- Forklift Image -->
-                        <div class="forklift-image wow slideInLeft">
-                            <img src="img/forklift_Image.png" alt="">
-                        </div>
-                        <!-- Forklift Image -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Tracking Your Freight End -->
+
 
         <!-- How It Works Start -->
         <section class="bg-light-gray">
@@ -216,8 +169,8 @@
                             <div class="service-icon mx-auto mb-5 icon-box-5">
                                 <i class="icofont-glass"></i>
                             </div>
-                            <h4 class="h4-md fw-7 txt-blue">SAFE &amp; SECURE</h4>
-                            Nunc non mollis nulla. Sed tconsectetur elit id mi consectetur bibendum.
+                            <h4 class="h4-md fw-7 txt-blue">{{trans('service.safe')}}</h4>
+                            100% гарантия за сохранность вашего груза.
                         </div>
                     </div>
                     <!-- Icon Boxes -->
@@ -228,8 +181,8 @@
                             <div class="service-icon mx-auto mb-5 icon-box-5">
                                 <i class="icofont-delivery-time"></i>
                             </div>
-                            <h4 class="h4-md fw-7">FAST DELIVERY</h4>
-                            Nunc non mollis nulla. Sed tconsectetur elit id mi consectetur bibendum.
+                            <h4 class="h4-md fw-7">{{trans('service.fast_delivery')}}</h4>
+                            Экономия вашего время. Доставляем груз бережно и в срок
                         </div>
                     </div>
                     <!-- Icon Boxes -->
@@ -240,8 +193,8 @@
                             <div class="service-icon mx-auto mb-5 icon-box-5">
                                 <i class="icofont-live-support"></i>
                             </div>
-                            <h4 class="h4-md fw-7 txt-blue">24/7 Support</h4>
-                            Nunc non mollis nulla. Sed tconsectetur elit id mi consectetur bibendum.
+                            <h4 class="h4-md fw-7 txt-blue">{{trans('service.support')}}</h4>
+                            Предоставляем поддержку нашим клиентам 24/7
                         </div>
                     </div>
                     <!-- Icon Boxes -->
@@ -256,8 +209,7 @@
                     <!-- Heading Main -->
                     <div class="col-sm-12 wow fadeInDown">
                         <h1 class="heading-main">
-                            <span>What Our</span>
-                            Customers Saying
+                            Что говорят наши клиенты
                         </h1>
                     </div>
                     <!-- Heading Main -->
@@ -427,8 +379,7 @@
                     <!-- Heading Main -->
                     <div class="col-sm-12 wow fadeInDown">
                         <h1 class="heading-main">
-                            <span>SOME OF OUR</span>
-                            Clients
+                            {{trans('service.clients')}}
                         </h1>
                     </div>
                     <!-- Heading Main -->
@@ -547,18 +498,18 @@
             <div class="bg-overlay blue opacity-60"></div>
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-12 mb-0">
-                        <h4 class="h4-xl">Interested in working with Logzee?</h4>
+                    <div class="col-lg-4 col-md-12 mb-0 wow slideInUp">
+                        <h4 class="h4-xl">Заинтеремованы работать с Region Логистик?</h4>
                     </div>
-                    <div class="col">
+                    <div class="col wow slideInUp">
                         <div class="center-text">
-                            We don’t just manage suppliers, we micro-manage them. We have a consultative, personalized
-                            approach
+                            Мы предоставляем индивидуальный подход для каждого клиента! <br>
+                            Оставте заявку и мы вам перезвоним
                         </div>
                     </div>
-                    <div class="col-sm-auto">
-                        <a href="#" class="btn btn-theme bg-white bordered">Get In Touch <i
-                                class="icofont-rounded-right"></i></a>
+                    <div class="col-sm-auto wow slideInUp">
+                        <a href="#" class="btn btn-theme bg-white bordered" role="button" data-toggle="modal" data-target="#request_popup">Интересно <i
+                                    class="icofont-rounded-right"></i></a>
                     </div>
                 </div>
             </div>
