@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('content')
     <div class="slider bg-navy-blue bg-scroll pos-rel breadcrumbs-page"
-         style="background-image: url({{asset('img/banner_slider_3.jpg')}});">
+         style="background-image: url({{asset('img/contact-bg.jpg')}});">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('home')}}"><i class="icofont-home"></i></a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{trans('contact.title')}}</li>
                 </ol>
             </nav>
-            <h1>Contact Us</h1>
+            <h1>{{trans('contact.title')}}</h1>
             <div class="breadcrumbs-description">
                 Molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto.
             </div>
@@ -25,31 +25,24 @@
                 <div class="row justify-content-between">
                     <div class="col-md-6 col-sm-12 col-lg-4 wow fadeInRight">
                         <div class="contact-detail-shadow">
-                            <h4>Germany</h4>
+                            <h4>{{trans('contact.address')}}</h4>
                             <div class="d-flex align-items-start items">
-                                <i class="icofont-google-map"></i> <span>Envato Pty Ltd, 13/2 Elizabeth
-St Melbourne VIC 3000, Australia</span>
-                            </div>
-                            <div class="d-flex align-items-start items">
-                                <i class="icofont-phone"></i> <span>+1 (408) 786 - 5117</span>
-                            </div>
-                            <div class="text-nowrap d-flex align-items-start items">
-                                <i class="icofont-email"></i> <a href="#">germany@logzee.com</a>
+                                <i class="icofont-google-map"></i> <span>Казакстан, Алматы
+                            мкр Улжан 1 ,Жана жол 25.</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12 col-lg-4 wow fadeInLeft">
                         <div class="contact-detail-shadow">
-                            <h4>Spain</h4>
+                            <h4>{{trans('contact.contacts')}}</h4>
                             <div class="d-flex align-items-start items">
-                                <i class="icofont-google-map"></i> <span>Envato Pty Ltd, 13/2 Elizabeth
-St Melbourne VIC 3000, Australia</span>
+                                <i class="icofont-phone"></i> <span><a href="tel:+77056630663"> +7 705 663 06 63</a> - Аяулым</span>
                             </div>
                             <div class="d-flex align-items-start items">
-                                <i class="icofont-phone"></i> <span>+1 (408) 786 - 5117</span>
+                                <i class="icofont-phone"></i> <span><a href="tel:+77077667834"> +7 707 766 78 34</a>- Жаркынай</span>
                             </div>
                             <div class="text-nowrap d-flex align-items-start items">
-                                <i class="icofont-email"></i> <a href="#">spain@logzee.com</a>
+                                <i class="icofont-email"></i> <a href="mailto:region-lg@mail.ru">region-lg@mail.ru</a>
                             </div>
                         </div>
                     </div>
@@ -65,55 +58,36 @@ St Melbourne VIC 3000, Australia</span>
                         <div class="free-quote-form contact-page">
                             <!-- Heading Main -->
                             <h1 class="heading-main mb-4">
-                                Get in touch
+                                {{trans('contact.form-title')}}
                             </h1>
                             <!-- Heading Main -->
-                            <form action="#" method="post" id="contactusForm" novalidate="novalidate"
-                                  class="col rounded-field">
+                            <form action="{{route('mail')}}" method="post" class="col rounded-field entrance__form">
+                                @csrf
                                 <div class="form-row mb-4">
                                     <div class="col">
-                                        <input type="text" name="name" id="name" class="form-control"
-                                               placeholder="Your Name">
+                                        <input type="text" name="name"  class="form-control" required
+                                               placeholder="{{trans('contact.name')}}">
                                     </div>
                                     <div class="col">
-                                        <input type="text" name="email" id="email" class="form-control"
+                                        <input type="email" name="email" class="form-control" required
                                                placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="form-row mb-4">
                                     <div class="col">
-                                        <select title="Please choose a package" required="" name="Transport_Package"
-                                                id="Transport_Package" class="custom-select" aria-required="true"
-                                                aria-invalid="false">
-                                            <option value="">Transport Type</option>
-                                            <option value="Type 1">Type 1</option>
-                                            <option value="Type 2">Type 2</option>
-                                            <option value="Type 3">Type 3</option>
-                                            <option value="Type 4">Type 4</option>
-                                        </select>
-                                    </div>
-                                    <div class="col">
-                                        <select title="Please choose a package" required="" name="Freight_Package"
-                                                id="Freight_Package" class="custom-select" aria-required="true"
-                                                aria-invalid="false">
-                                            <option value="">Type of freight</option>
-                                            <option value="Type 1">Type 1</option>
-                                            <option value="Type 2">Type 2</option>
-                                            <option value="Type 3">Type 3</option>
-                                            <option value="Type 4">Type 4</option>
-                                        </select>
+                                        <input type="text" name="phone"  class="form-control txtLogin" required
+                                               placeholder="{{trans('contact.phone')}}">
                                     </div>
                                 </div>
                                 <div class="form-row mb-4">
                                     <div class="col">
-                                        <textarea rows="7" name="cment" id="cment" placeholder="Message"
+                                        <textarea rows="7" name="message"  placeholder="{{trans('contact.message')}}" required
                                                   class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-row text-center">
-                                    <button name="contactForm" id="contactForm" type="submit"
-                                            class="form-btn mx-auto btn-theme bg-orange">Submit Now <i
-                                            class="icofont-rounded-right"></i></button>
+                                    <input type="submit" id="contactForm" value="{{trans('button.send')}}"
+                                            class="form-btn mx-auto btn-theme bg-orange">
                                 </div>
                             </form>
                         </div>

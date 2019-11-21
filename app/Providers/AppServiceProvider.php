@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Service;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Locale;
@@ -29,8 +30,9 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*', function($view)
         {
+            $services = Service::all();
             $locale = Locale::lang();
-            $view->with('locale', $locale);
+            $view->with('locale', $locale)->with('services', $services);
         });
     }
 }

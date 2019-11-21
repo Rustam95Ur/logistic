@@ -23,6 +23,7 @@ Route::group([
     Route::get('/service/{id}', 'Page\ServiceController@show')->name('service');
 
     Route::post('/send/request', 'Mail\BaseController@requestForm')->name('request');
+    Route::post('/send/mail', 'Mail\BaseController@mailForm')->name('mail');
 });
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

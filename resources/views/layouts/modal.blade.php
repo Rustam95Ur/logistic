@@ -42,15 +42,22 @@
                                                 <div class="col">
                                                     <select name="freight_type" class="custom-select">
                                                         <option disabled
-                                                                selected>{{trans('request.freight_type')}}</option>
-                                                        <option value="1">Type 1</option>
+                                                                selected>{{trans('request.freight')}}</option>
+                                                        <option value="{{trans('request.freight_type.bulk')}}">{{trans('request.freight_type.bulk')}}</option>
+                                                        <option value="{{trans('request.freight_type.dangerous')}}">{{trans('request.freight_type.dangerous')}}</option>
+                                                        <option value="{{trans('request.freight_type.perishable')}}">{{trans('request.freight_type.perishable')}}</option>
+                                                        <option value="{{trans('request.freight_type.general')}}">{{trans('request.freight_type.general')}}</option>
+                                                        <option value="{{trans('request.freight_type.fabricated')}}">{{trans('request.freight_type.fabricated')}}</option>
+                                                        <option value="{{trans('request.freight_type.oversized')}}">{{trans('request.freight_type.oversized')}}</option>
                                                     </select>
                                                 </div>
                                                 <div class="col">
-                                                    <select name="incoterms" class="custom-select">
+                                                    <select name="transport_type" class="custom-select">
                                                         <option disabled
-                                                                selected>{{trans('request.incoterms')}}</option>
-                                                        <option value="1">Type 1</option>
+                                                                selected>{{trans('request.transport_type')}}</option>
+                                                        @foreach($services as $service)
+                                                            <option value="{{$service->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}">{{$service->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>

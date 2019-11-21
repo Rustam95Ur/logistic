@@ -3,8 +3,17 @@
 return [
 
     'title'                     => 'Форма заявки',
-    'freight_type'              => 'Тип груза',
+    'freight'                   => 'Тип груза',
+    'freight_type'              => [
+        'bulk'                      => 'Наливные',
+        'dangerous'                 => 'Опасные',
+        'perishable'                => 'Скоропортящиеся',
+        'general'                   => 'Генеральные ',
+        'fabricated'                => 'Сборные  ',
+        'oversized'                 => 'Негабаритные  ',
+    ],
     'incoterms'                 => 'Инкотермс',
+    'transport_type'            => 'Вид транспорта',
     'city_departure'            => 'Город отправления',
     'delivery_city'             => 'Город доставки',
     'gross_weight'              => 'Общий вес',
