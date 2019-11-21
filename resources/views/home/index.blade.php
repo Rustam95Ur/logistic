@@ -688,82 +688,14 @@
                 </div>
             </div>
         </section>
-        <section class="wide-tb-100">
-            <div class="container">
-                <div class="row">
-                    <!-- Heading Main -->
-                    <div class="col-sm-12 wow fadeInDown">
-                        <h1 class="heading-main">
-                            <span>COMPANY'S NEWS</span>
-                            Recent Posts
-                        </h1>
-                    </div>
-                    <div class="col-sm-12 col-md-4 wow fadeInLeft">
-                        <div class="blog-warp">
-                            <img src="{{asset('img/blog_img_1.jpg')}}" alt="" class="rounded">
-                            <div class="meta-box">
-                                <a href="?author=1" title="Posts by admin" rel="author">admin</a>
-                                <span>/</span> April 1, 2019
-                            </div>
-                            <h4 class="h4-md mb-3">
-                                <a href="?p=6">Liberalisation in 2019
-                                    year of cargo</a>
-                            </h4>
-                            <p>
-                                Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium...</p>
-                            <div>
-                                <a href="?p=6" class="btn-theme bg-navy-blue">
-                                    Learn more <i class="icofont-rounded-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4 wow fadeInLeft">
-                        <div class="blog-warp">
-                            <img src="{{asset('img/blog_img_2.jpg')}}" alt="" class="rounded">
-                            <div class="meta-box">
-                                <a href="?author=1" title="Posts by admin" rel="author">admin</a> <span>/</span>
-                                April 1, 2019
-                            </div>
-                            <h4 class="h4-md mb-3"><a href="?p=9">Fleet Management Comes into</a></h4>
-                            <p>
-                                Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium...</p>
-                            <div>
-                                <a href="?p=9" class="btn-theme bg-navy-blue">
-                                    Learn more <i class="icofont-rounded-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4 wow fadeInLeft">
-                        <div class="blog-warp">
-                            <img src="{{asset('img/blog_img_3.jpg')}}" alt="" class="rounded">
-                            <div class="meta-box">
-                                <a href="?author=1" title="Posts by admin" rel="author">admin</a>
-                                <span>/</span> April 1, 2019
-                            </div>
-                            <h4 class="h4-md mb-3">
-                                <a href="?p=13">New Warehouse Now Operational</a>
-                            </h4>
-                            <p>
-                                Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium...</p>
-                            <div>
-                                <a href="?p=13" class="btn-theme bg-navy-blue">Learn more
-                                    <i class="icofont-rounded-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <br>
         <section class="wide-tb-100 bg-fixed clients-bg pos-rel">
             <div class="bg-overlay blue opacity-80"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 wow fadeInDown">
                         <h1 class="heading-main">
-                            <span>SOME OF OUR</span>
-                            Clients
+                            Наши клиенты
                         </h1>
                     </div>
                     <div class="col-sm-12 wow fadeInUp">
@@ -878,15 +810,10 @@
         <section class="map-bg">
             <div class="contact-details row d-flex">
                 <div class="col">
-                    <h4>Germany</h4>
-                    <p><i class="icofont-phone"></i> +1 (408) 786 - 5117</p>
-                    <div class="text-nowrap"><i class="icofont-email"></i> <a href="#">germany@logzee.com</a>
-                    </div>
-                </div>
-                <div class="col">
-                    <h4>Spain</h4>
-                    <p><i class="icofont-phone"></i> +1 (408) 786 - 5117</p>
-                    <div class="text-nowrap"><i class="icofont-email"></i> <a href="#">spain@logzee.com</a>
+                    <h4>Казахстан, Алматы. мкр Улжан 1, Жана жол 25</h4>
+                    <p><i class="icofont-phone"></i> +7 705 663 06 63 - Аяулым</p>
+                    <p><i class="icofont-phone"></i> +7 707 766 78 34 - Жаркынай</p>
+                    <div class="text-nowrap"><i class="icofont-email"></i> <a href="#">region-lg@mail.ru</a>
                     </div>
                 </div>
             </div>
