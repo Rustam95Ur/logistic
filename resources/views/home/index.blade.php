@@ -5,13 +5,10 @@
             <div class="Header">
                 <div class="Header-background"></div>
                 <div class="Header-content">
-                    <div class="Header-hero">
+                    <div class="Header-hero text-center">
                         {{--<h1>The best app you've <br/> ever seen</h1>--}}
-                        <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг</p>
-                        <button class="btn-theme bg-white light" role="button" data-toggle="modal" data-target="#request_popup">Оставить заявку</button>
-                    </div>
-                    <div class="Header-visuals">
-                        <img src="{{asset('img/logo-region.png')}}" >
+                        <h1>Мы гарантируем движение</h1>
+                        <button class="btn-theme bg-white light mt-5" role="button" data-toggle="modal" data-target="#request_popup">Оставить заявку</button>
                     </div>
                 </div>
             </div>
@@ -834,15 +831,15 @@
     <script>
         function initMap() {
             // The location of Uluru
-            var uluru = {lat: -25.344, lng: 131.036};
+            var uluru = {lat: 43.298523, lng: 76.871136};
             // The map, centered at Uluru
             var map = new google.maps.Map(
-                document.getElementById('map-holder'), {zoom: 4, center: uluru});
+                document.getElementById('map-holder'), {zoom: 15, center: uluru});
             // The marker, positioned at Uluru
             var marker = new google.maps.Marker({position: uluru, map: map});
         }
     </script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwCO-k_M6WpsLWjKDawOG6sRFtcBysjGg&callback=initMap">
     </script>
 @endsection

@@ -33,7 +33,7 @@
     transition: all 0.2s;
 }
 .navbar-toggler .icon-bar {
-    background-color: #ffffff;
+    background-color: #000000;
 }
 .navbar-toggler.x .icon-bar:nth-of-type(1) {
 	-webkit-transform: rotate(45deg);

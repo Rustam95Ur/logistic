@@ -196,6 +196,8 @@
 	.about-whoose{ padding: 10px !important; padding-right: 0 !important; }
 
 	.icons-listing.w-half li { flex: 1 1 100%; }
+    .Header {margin-top: 0;     height: 30vh;}
+    .Header-hero h1 {font-size: 2rem}
 }
 
 @media (max-width: 480px) { 

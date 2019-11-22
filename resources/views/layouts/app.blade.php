@@ -102,6 +102,17 @@
 </script>
 <script src="{{asset('js/mask/entrance.js')}}"></script>
 <script src="{{asset('js/mask/global.js')}}"></script>
-
+@if ($message = Session::get('success') or $message = Session::get('error') or $message = Session::get('warning') or $message = Session::get('info') or $errors->any())
+    <script>
+        (function ($) {
+            $(function () {
+                $('#messageModal').modal('show');
+                setTimeout(function () {
+                    $('#messageModal').modal('hide')
+                }, 4000);
+            });
+        })(jQuery);
+    </script>
+@endif
 </body>
 </html>

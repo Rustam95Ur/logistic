@@ -111,7 +111,6 @@
             </div>
         </div>
     </div>
-    <!-- Main Navigation Start -->
     <nav class="navbar navbar-expand-lg bg-transparent-header">
         <div class="container text-nowrap bdr-nav px-0">
             <div class="d-flex mr-auto">
@@ -119,33 +118,23 @@
                     <img src="{{asset('img/logo-region.png')}}" alt="">
                 </a>
             </div>
-            <!-- Topbar Request Quote Start -->
-        {{--<span class="order-lg-last d-inline-flex request-btn">--}}
-        {{--<a class="nav-link mr-2 ml-auto" href="#" id="search_home"><i--}}
-        {{--class="icofont-search"></i></a>--}}
-        {{--</span>--}}
-        <!-- Toggle Button Start -->
-            <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse"
-                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-                    aria-label="Toggle navigation" style="">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!-- Toggle Button End -->
-            <!-- Topbar Request Quote End -->
-            <div class="collapse navbar-collapse" data-hover="dropdown">
-                <ul class="navbar-nav ml-auto  ">
-                    <li class="menu-item"><a title="" href="{{route('home')}}">{{trans('header.home')}}</a></li>
-                    <li class="menu-item"><a title="" href="{{route('about')}}">{{trans('header.about')}}</a></li>
-                    <li class="menu-item"><a title="" href="{{route('services')}}">{{trans('header.services')}}</a></li>
-                    <li class="menu-item"><a title="" href="#">{{trans('header.cars')}}</a></li>
-                    <li class="menu-item"><a title="" href="{{route('contact')}}">{{trans('header.contacts')}}</a></li>
-                </ul>
-                <!-- Main Navigation End -->
-            </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-collapse  collapse" id="collapsingNavbar">
+            <ul class="navbar-nav nav-item ml-auto">
+                <li class="nav-link"><a href="{{route('home')}}">{{trans('header.home')}}</a></li>
+                <li class="nav-link"><a href="{{route('about')}}">{{trans('header.about')}}</a></li>
+                <li class="nav-link"><a href="{{route('services')}}">{{trans('header.services')}}</a></li>
+                <li class="nav-link"><a href="#">{{trans('header.cars')}}</a></li>
+                <li class="nav-link"><a href="{{route('contact')}}">{{trans('header.contacts')}}</a></li>
+            </ul>
+        </div>
         </div>
     </nav>
+    <!-- Main Navigation Start -->
     <!-- Main Navigation End -->
 </header>
 

@@ -43,12 +43,18 @@
                                                     <select name="freight_type" class="custom-select">
                                                         <option disabled
                                                                 selected>{{trans('request.freight')}}</option>
-                                                        <option value="{{trans('request.freight_type.bulk')}}">{{trans('request.freight_type.bulk')}}</option>
-                                                        <option value="{{trans('request.freight_type.dangerous')}}">{{trans('request.freight_type.dangerous')}}</option>
-                                                        <option value="{{trans('request.freight_type.perishable')}}">{{trans('request.freight_type.perishable')}}</option>
-                                                        <option value="{{trans('request.freight_type.general')}}">{{trans('request.freight_type.general')}}</option>
-                                                        <option value="{{trans('request.freight_type.fabricated')}}">{{trans('request.freight_type.fabricated')}}</option>
-                                                        <option value="{{trans('request.freight_type.oversized')}}">{{trans('request.freight_type.oversized')}}</option>
+                                                        <option
+                                                            value="{{trans('request.freight_type.bulk')}}">{{trans('request.freight_type.bulk')}}</option>
+                                                        <option
+                                                            value="{{trans('request.freight_type.dangerous')}}">{{trans('request.freight_type.dangerous')}}</option>
+                                                        <option
+                                                            value="{{trans('request.freight_type.perishable')}}">{{trans('request.freight_type.perishable')}}</option>
+                                                        <option
+                                                            value="{{trans('request.freight_type.general')}}">{{trans('request.freight_type.general')}}</option>
+                                                        <option
+                                                            value="{{trans('request.freight_type.fabricated')}}">{{trans('request.freight_type.fabricated')}}</option>
+                                                        <option
+                                                            value="{{trans('request.freight_type.oversized')}}">{{trans('request.freight_type.oversized')}}</option>
                                                     </select>
                                                 </div>
                                                 <div class="col">
@@ -56,7 +62,8 @@
                                                         <option disabled
                                                                 selected>{{trans('request.transport_type')}}</option>
                                                         @foreach($services as $service)
-                                                            <option value="{{$service->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}">{{$service->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}</option>
+                                                            <option
+                                                                value="{{$service->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}">{{$service->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -95,16 +102,19 @@
                                             <div class="form-row mb-4">
                                                 <div class="col user-info">
                                                     <input type="text" name="name" value="" size="40" required
-                                                           class="form-control" placeholder="{{trans('request.name.title')}}">
+                                                           class="form-control"
+                                                           placeholder="{{trans('request.name.title')}}">
 
                                                     <input type="email" name="email" value="" size="40" required
                                                            class="form-control" placeholder="Email">
 
                                                     <input type="text" name="phone" value="" size="40" required
-                                                           class="form-control txtLogin" placeholder="{{trans('request.phone.title')}}">
+                                                           class="form-control txtLogin"
+                                                           placeholder="{{trans('request.phone.title')}}">
                                                 </div>
                                                 <div class="col">
-                                                        <textarea name="message" cols="40" rows="10" class="form-control"
+                                                        <textarea name="message" cols="40" rows="10"
+                                                                  class="form-control"
                                                                   placeholder="{{trans('request.message')}}"></textarea>
                                                 </div>
                                             </div>
@@ -121,9 +131,35 @@
                         </div>
                     </div>
                 </section>
-                <!-- Contact Details End -->
             </div>
         </div>
     </div>
 </div>
-
+<!-- Message Modal -->
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                @if ($message = Session::get('success'))
+                    <h6 class="text-center text-success">{!! $message !!}</h6>
+                @endif
+                @if ($message = Session::get('error'))
+                    <h6 class="text-center text-danger">{!! $message !!}</h6>
+                @endif
+                @if ($message = Session::get('warning'))
+                    <h6 class="text-center text-danger">{!! $message !!}</h6>
+                @endif
+                @if ($message = Session::get('info'))
+                    <h6 class="text-center text-danger">{!! $message !!}</h6>
+                @endif
+                @if ($errors->any())
+                    @foreach($errors->all() as $error)
+                        <ul class="questions">
+                            <li class="text-danger"><h6>{!! $error !!}</h6></li>
+                        </ul>
+                    @endforeach
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
