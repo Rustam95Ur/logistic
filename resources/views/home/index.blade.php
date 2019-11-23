@@ -41,30 +41,24 @@
                                     <i class="icofont-box"></i>
                                     <h3 class="h3-xs txt-blue">100% гарантия за сохранность вашего груза</h3>
                                     <p>Мы гарантируем 100% сохранность вашего груза</p>
-                                    <a href="#" class="btn-arrow bg-navy-blue">
-                                        <i class="icofont-swoosh-right"></i>
-                                    </a>
+                                    <br>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="icon-box-6">
                                     <i class="icofont-safety"></i>
-                                    <h3 class="h3-xs txt-blue">Скидки</h3>
+                                    <h3 class="h3-xs txt-blue">Скидки</h3><br>
                                     <p>Для постоянныж клиентов действуют скидки </p>
-                                    <a href="#" class="btn-arrow bg-navy-blue">
-                                        <i class="icofont-swoosh-right"></i>
-                                    </a>
+                                    <br>
                                 </div>
                             </div>
                             <div class="w-100 spacer-50 d-none d-lg-none d-md-block d-lg-block d-sm-none"></div>
                             <div class="col-12 col-md-6">
                                 <div class="icon-box-6">
                                     <i class="icofont-tree-alt"></i>
-                                    <h3 class="h3-xs txt-blue">Эко-доставка</h3>
+                                    <h3 class="h3-xs txt-blue">Эко-доставка</h3><br>
                                     <p>Эко-доставка</p>
-                                    <a href="#" class="btn-arrow bg-navy-blue">
-                                        <i class="icofont-swoosh-right"></i>
-                                    </a>
+                                    <br>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
@@ -72,9 +66,7 @@
                                     <i class="icofont-delivery-time"></i>
                                     <h3 class="h3-xs txt-blue">Доставляем груз бережно в срок </h3>
                                     <p>Экономия вашего время </p>
-                                    <a href="#" class="btn-arrow bg-navy-blue">
-                                        <i class="icofont-swoosh-right"></i>
-                                    </a>
+                                    <br>
                                 </div>
                             </div>
                         </div>

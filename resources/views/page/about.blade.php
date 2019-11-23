@@ -11,7 +11,7 @@
             </nav>
             <h1>{{trans('header.about')}}</h1>
             <div class="breadcrumbs-description">
-                активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг
+                Активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг
             </div>
         </div>
     </div>
@@ -48,33 +48,23 @@
                         </h1>
                         <ul class="list-unstyled icons-listing theme-orange w-half mb-0">
                             <li class="wow fadeInUp">
-                                <i class="icofont-check"></i>Deliver Environmentally Responsible Client Services
+                                <i class="icofont-check"></i>100% гарантия за сохранность вашего груза.
                             </li>
                             <li class="wow fadeInUp">
                                 <i class="icofont-check"></i>
-                                Be an Active Community Partner
+                                Экономия вашего время
                             </li>
                             <li class="wow fadeInUp">
-                                <i class="icofont-check"></i>Drive
-                                Continuous Improvement
+                                <i class="icofont-check"></i>
+                                Для постоянныж клиентов действуют скидки
                             </li>
                             <li class="wow fadeInUp">
-                                <i class="icofont-check"></i>Clearance
-                                and compliance service
+                                <i class="icofont-check"></i>Доставляем груз бережно в срок
                             </li>
                             <li class="wow fadeInUp">
-                                <i class="icofont-check"></i>Clearance
-                                and compliance service
+                                <i class="icofont-check"></i>Обеспечиваем хранение доверенных нам грузов
                             </li>
-                            <li class="wow fadeInUp"><i class="icofont-check"></i>Maintain
-                                High Ethical Standards
-                            </li>
-                            <li class="wow fadeInUp"><i class="icofont-check"></i>Air &amp;
-                                Ocean Cargo Insurance
-                            </li>
-                            <li class="wow fadeInUp" ><i class="icofont-check"></i>We ensure
-                                complete security
-                            </li>
+
                         </ul>
                     </div>
                 </div>
