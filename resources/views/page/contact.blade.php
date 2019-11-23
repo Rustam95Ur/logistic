@@ -11,7 +11,7 @@
             </nav>
             <h1>{{trans('contact.title')}}</h1>
             <div class="breadcrumbs-description">
-                Molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto.
+                Будем рады ответить на все ваши вопросы
             </div>
         </div>
     </div>
