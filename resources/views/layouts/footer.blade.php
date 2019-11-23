@@ -37,8 +37,7 @@
                 <div class="footer-widget-contact">
                     <div class="media mb-3">
                         <i class="icofont-google-map mr-3"></i>
-                        <div class="media-body">Казакстан, Алматы
-                            мкр Улжан 1 ,Жана жол 25.</div>
+                        <div class="media-body">{{trans('contact.address-info')}}</div>
                     </div>
                     <div class="media mb-3">
                         <i class="icofont-smart-phone mr-3"></i>

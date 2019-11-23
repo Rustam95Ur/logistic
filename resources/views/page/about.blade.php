@@ -11,7 +11,8 @@
             </nav>
             <h1>{{trans('header.about')}}</h1>
             <div class="breadcrumbs-description">
-                Активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг
+                Активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный
+                спектр экспедиторских услуг
             </div>
         </div>
     </div>
@@ -22,8 +23,10 @@
                     <h2 class="mb-4 fw-7 txt-blue">
                         {{trans('about.about')}} <span class="fw-6 txt-orange"></span>
                     </h2>
-                    <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг</p>
-                    <p>Наша компания предоставляет транспортные услуги по перевозки грузов по г. Алматы, Казахстану и Китай.
+                    <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая
+                        предлагает полный спектр экспедиторских услуг</p>
+                    <p>Наша компания предоставляет транспортные услуги по перевозки грузов по г. Алматы, Казахстану и
+                        Китай.
 
 
                         Мы поможем Вам выбрать подходящий автотранспорт под любые габариты Вашего груза</p>
@@ -97,7 +100,7 @@
                         <h5 class="h5-md txt-ligt-gray">Head Operational</h5>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 wow fadeInUp" >
+                <div class="col-sm-12 col-md-4 wow fadeInUp">
                     <div class="team-section-two">
                         <img src="{{asset('img/team-3.jpg')}}" alt=""
                              class="rounded">
@@ -122,135 +125,13 @@
                     <div class="owl-carousel owl-theme owl-loaded owl-drag" id="home-clients">
                         <div class="owl-stage-outer">
                             <div class="owl-stage">
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                            src="{{asset('img/client1.png')}}"
-                                            alt="">
+                                @foreach($clients as $client)
+                                    <div class="owl-item cloned">
+                                        <div class="item">
+                                            <img src="{{ Voyager::image( $client->image ) }}" alt="{{$client->title}}">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                            src="{{asset('img/client2.png')}}"
-                                            alt="">
-
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                            src="{{asset('img/client3.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                            src="{{asset('img/client4.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                            src="{{asset('img/client5.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                            src="{{asset('img/client6.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                            src="{{asset('img/client1.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                           src="{{asset('img/client2.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                           src="{{asset('img/client3.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                           src="{{asset('img/client4.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                           src="{{asset('img/client5.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                           src="{{asset('img/client6.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-
-                                        <img
-                                            src="{{asset('img/')}}client1.png"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-
-                                        <img
-                                           src="{{asset('img/client2.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                           src="{{asset('img/client3.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                           src="{{asset('img/client4.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                           src="{{asset('img/client5.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
-                                <div class="owl-item cloned">
-                                    <div class="item">
-                                        <img
-                                           src="{{asset('img/client6.png')}}"
-                                            alt="">
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="owl-nav disabled">
@@ -274,40 +155,13 @@
                         {{trans('about.questions')}}
                     </h1>
                 </div>
-                <div class="col-sm-12 col-md-6 wow fadeInUp" >
-                    <h4 class="h4-md mb-3">Lobortis sit magna ornare magna egestas?</h4>
-                    <p>Etiam sit amet mauris suscipit sit amet in odio. Integer congue leo metus. Vitae arcu mollis
-                        blandit ultrice ligula egestas magna suscipit lectus magna suscipit luctus undo blandit vitae
-                        purus laoreet</p>
+                @foreach($questions as $question)
+                    <div class="col-sm-12 col-md-6 wow fadeInUp">
+                        <h4 class="h4-md mb-3">- {{$question->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}</h4>
+                        <p>{{$question->getTranslatedAttribute('answer', $locale, 'fallbackLocale')}}</p>
 
-                </div>
-                <div class="col-sm-12 col-md-6 wow fadeInUp">
-                    <h4 class="h4-md mb-3">Aliquam dapibus pretium ornare?</h4>
-                    <p>Feugiat eros ligula massa lipsum primis in orci luctus et ultrices posuere cubilia curae congue
-                        lorem. ante ipsum primis in faucibus bibendum sit amet in odio</p>
-                </div>
-                <div class="col-sm-12 col-md-6 wow fadeInUp">
-                    <h4 class="h4-md mb-3">Placeat axime facere omnis volute?</h4>
-                    <p>Etiam sit amet mauris suscipit sit amet in odio. Integer congue leo metus. Vitae arcu mollis
-                        blandit ultrice ligula egestas magna suscipit lectus magna suscipit luctus undo blandit vitae
-                        purus laoreet</p>
-                </div>
-                <div class="col-sm-12 col-md-6 wow fadeInUp">
-                    <h4 class="h4-md mb-3">Dapibus lobortis pretium ornare?</h4>
-                    <p>Feugiat eros ligula massa lipsum primis in orci luctus et ultrices posuere cubilia curae congue
-                        lorem. ante ipsum primis in faucibus bibendum sit amet in odio</p>
-                </div>
-                <div class="col-sm-12 col-md-6 wow fadeInUp">
-                    <h4 class="h4-md mb-3">An interdum lobortis pretium ornare?</h4>
-                    <p>Etiam sit amet mauris suscipit sit amet in odio. Integer congue leo metus. Vitae arcu mollis
-                        blandit ultrice ligula egestas magna suscipit lectus magna suscipit luctus undo blandit vitae
-                        purus laoreet</p>
-                </div>
-                <div class="col-sm-12 col-md-6 wow fadeInUp" >
-                    <h4 class="h4-md mb-3">Interdum lobortis pretium ornare?</h4>
-                    <p>Feugiat eros ligula massa lipsum primis in orci luctus et ultrices posuere cubilia curae congue
-                        lorem. ante ipsum primis in faucibus bibendum sit amet in odio</p>
-                </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -325,7 +179,8 @@
                     </div>
                 </div>
                 <div class="col-sm-auto wow slideInUp">
-                    <a href="#" class="btn btn-theme bg-white bordered" role="button" data-toggle="modal" data-target="#request_popup">Интересно <i
+                    <a href="#" class="btn btn-theme bg-white bordered" role="button" data-toggle="modal"
+                       data-target="#request_popup">Интересно <i
                             class="icofont-rounded-right"></i></a>
                 </div>
             </div>

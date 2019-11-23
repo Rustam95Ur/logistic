@@ -25,8 +25,10 @@
                             Качество <span class="fw-6 txt-orange">и</span> Время доставки <br><span
                                 class="fw-6 txt-orange">по выгодным ценам</span>
                         </h2>
-                        <p class="wow fadeInLeft">Наша компания предоставляет транспортные услуги по перевозки грузов по г. Алматы, Казахстану и Китаю. </p>
-                        <p class="wow fadeInLeft">Мы поможем Вам выбрать подходящий автотранспорт под любые габариты Вашего груза</p>
+                        <p class="wow fadeInLeft">Наша компания предоставляет транспортные услуги по перевозки грузов по
+                            г. Алматы, Казахстану и Китаю. </p>
+                        <p class="wow fadeInLeft">Мы поможем Вам выбрать подходящий автотранспорт под любые габариты
+                            Вашего груза</p>
                     </div>
                     <div class="col-md-6">
                     </div>
@@ -62,36 +64,6 @@
                             </div>
                         @endforeach
                     @endif
-
-                    <!-- Icon Box 1 -->
-                    <!-- Icon Box 1 -->
-{{--                    <div class="col-md-4 wow fadeInUp">--}}
-{{--                        <a href="#">--}}
-{{--                            <div class="icon-box-1">--}}
-{{--                                <img src="{{asset('img/icon-box-1.jpg')}}" alt="">--}}
-{{--                                <div class="text">--}}
-{{--                                    <i class="icofont-vehicle-delivery-van"></i>--}}
-{{--                                    GROUND DELIVERY--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    --}}
-{{--                    <!-- Icon Box 1 -->--}}
-
-{{--                    <!-- Icon Box 1 -->--}}
-{{--                    <div class="col-md-4 wow fadeInUp">--}}
-{{--                        <a href="#">--}}
-{{--                            <div class="icon-box-1">--}}
-{{--                                <img src="{{asset('img/icon-box-3.jpg')}}" alt="">--}}
-{{--                                <div class="text">--}}
-{{--                                    <i class="icofont-ship"></i>--}}
-{{--                                    SEA DELIVERY--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-                    <!-- Icon Box 1 -->
                 </div>
             </div>
         </section>
@@ -106,7 +78,6 @@
                     </div>
                     <div class="col-sm-12 wow fadeInDown">
                         <h1 class="heading-main">
-                            {{--<span>Our Goodness</span>--}}
                             {{trans('about.special')}}
                         </h1>
                     </div>
@@ -215,147 +186,29 @@
                     <!-- Heading Main -->
                     <div class="col-sm-12">
                         <div class="owl-carousel owl-theme owl-loaded owl-drag" id="home-client-testimonials">
-                            <!-- Client Testimonials Slider Item -->
-
-                            <!-- Client Testimonials Slider Item -->
-
-                            <!-- Client Testimonials Slider Item -->
-
-                            <!-- Client Testimonials Slider Item -->
-
-                            <!-- Client Testimonials Slider Item -->
-
-                            <!-- Client Testimonials Slider Item -->
-
                             <div class="owl-stage-outer">
                                 <div class="owl-stage">
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team_2.jpg')}}" alt="">
+                                    @foreach($comments as $comment)
+                                        <div class="owl-item">
+                                            <div class="item">
+                                                <div class="client-testimonial bg-wave">
+                                                    <div class="media">
+                                                        <div
+                                                            class="client-testimonial-icon rounded-circle bg-navy-blue">
+                                                            <img src="{{Voyager::image($comment->image)}}" alt="">
 
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries Vokalia and Consonantia, there live the blind
-                                                            texts. Aliquam gravida, urna quis ornare imperdiet, </p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team_3.jpg')}}" alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries Vokalia and Consonantia, there live the blind
-                                                            texts. Aliquam gravida, urna quis ornare imperdiet, </p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
+                                                        </div>
+                                                        <div class="client-inner-content media-body">
+                                                            <p>{{$comment->getTranslatedAttribute('text', $locale, 'fallbackLocale')}}</p>
+                                                            <footer class="blockquote-footer">
+                                                                <cite>{{$comment->getTranslatedAttribute('full_name', $locale, 'fallbackLocale')}}</cite>
+                                                            </footer>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="owl-item active">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team_1.jpg')}}" alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries Vokalia and Consonantia, there live the blind
-                                                            texts. Aliquam gravida, urna quis ornare imperdiet, </p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team_2.jpg')}}" alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries Vokalia and Consonantia, there live the blind
-                                                            texts. Aliquam gravida, urna quis ornare imperdiet, </p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item" style="width: 540px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team_3.jpg')}}" alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries Vokalia and Consonantia, there live the blind
-                                                            texts. Aliquam gravida, urna quis ornare imperdiet, </p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team_1.jpg')}}" alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries Vokalia and Consonantia, there live the blind
-                                                            texts. Aliquam gravida, urna quis ornare imperdiet, </p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team_2.jpg')}}" alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries Vokalia and Consonantia, there live the blind
-                                                            texts. Aliquam gravida, urna quis ornare imperdiet, </p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="owl-nav">
@@ -387,96 +240,13 @@
                         <div class="owl-carousel owl-theme owl-loaded owl-drag" id="home-clients">
                             <div class="owl-stage-outer">
                                 <div class="owl-stage">
+                                  @foreach($clients as $client)
                                     <div class="owl-item cloned">
                                         <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client1.png')}}" alt="">
+                                            <img src="{{Voyager::image($client->image)}}" alt="{{$client->title}}">
                                         </div>
                                     </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client2.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client3.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client4.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client5.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client6.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client1.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client2.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client3.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client4.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client5.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client6.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client1.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client2.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client3.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client4.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client5.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item bg-white">
-                                            <img src="{{asset('img/clients/client6.png')}}" alt="">
-                                        </div>
-                                    </div>
+                                      @endforeach
                                 </div>
                             </div>
                             <div class="owl-nav disabled">
@@ -508,8 +278,9 @@
                         </div>
                     </div>
                     <div class="col-sm-auto wow slideInUp">
-                        <a href="#" class="btn btn-theme bg-white bordered" role="button" data-toggle="modal" data-target="#request_popup">Интересно <i
-                                    class="icofont-rounded-right"></i></a>
+                        <a href="#" class="btn btn-theme bg-white bordered" role="button" data-toggle="modal"
+                           data-target="#request_popup">Интересно <i
+                                class="icofont-rounded-right"></i></a>
                     </div>
                 </div>
             </div>

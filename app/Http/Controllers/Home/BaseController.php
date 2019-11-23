@@ -11,6 +11,9 @@ use App\Models\Gallery;
 
 class BaseController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $clients = Client::all();

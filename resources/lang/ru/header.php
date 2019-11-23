@@ -3,7 +3,6 @@
 return [
 
     'address'               => 'Адрес',
-    'address-detail'        => 'Алматы',
     'email'                 => 'Email',
     'phone'                 => 'Телефон',
     'request'               => 'Оставить заявку',

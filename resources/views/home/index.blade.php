@@ -242,7 +242,6 @@
                     <!-- Heading Main -->
                     <div class="col-sm-12 wow fadeInDown">
                         <h1 class="heading-main">
-                            {{--<span>Our Gallery</span>--}}
                             {{trans('about.gallery')}}
                         </h1>
                     </div>

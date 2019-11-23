@@ -26,9 +26,10 @@
                     <div class="col-md-6 col-sm-12 col-lg-4 wow fadeInRight">
                         <div class="contact-detail-shadow">
                             <h4>{{trans('contact.address')}}</h4>
-                            <div class="d-flex align-items-start items">
-                                <i class="icofont-google-map"></i> <span>Казакстан, Алматы
-                            мкр Улжан 1 ,Жана жол 25.</span>
+                            <div class="d-flex align-items-start items mb-5">
+                                <i class="icofont-google-map"></i> <span>
+                                    {{trans('contact.address-info')}}
+                                </span>
                             </div>
                         </div>
                     </div>

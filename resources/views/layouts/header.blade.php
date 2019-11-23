@@ -5,15 +5,15 @@
                 <div class="col d-flex">
                     <div class="top-text">
                         <small class="txt-black">{{trans('header.address')}}</small>
-                       {{trans('header.address-detail')}}
+                        {{trans('contact.address-info-header')}}
                     </div>
                     <div class="top-text">
                         <small class="txt-black">{{trans('header.email')}}</small>
-                        <a href="mailto:support@logistic.com">support@logistic.com</a>
+                        <a href="mailto:region-lg@mail.ru">region-lg@mail.ru</a>
                     </div>
                     <div class="top-text">
                         <small class="txt-black">{{trans('header.phone')}}</small>
-                        <a href="tel:+77270000000">+7 727 000 00 00</a>
+                        <a href="tel:+77056630663">+7 705 663 06 63</a>
                     </div>
                     <div class="top-text">
                         <small class="txt-black">{{trans('header.social')}}</small>
@@ -128,7 +128,7 @@
                 <li class="nav-link"><a href="{{route('home')}}">{{trans('header.home')}}</a></li>
                 <li class="nav-link"><a href="{{route('about')}}">{{trans('header.about')}}</a></li>
                 <li class="nav-link"><a href="{{route('services')}}">{{trans('header.services')}}</a></li>
-                <li class="nav-link"><a href="#">{{trans('header.cars')}}</a></li>
+{{--                <li class="nav-link"><a href="#">{{trans('header.cars')}}</a></li>--}}
                 <li class="nav-link"><a href="{{route('contact')}}">{{trans('header.contacts')}}</a></li>
             </ul>
         </div>
