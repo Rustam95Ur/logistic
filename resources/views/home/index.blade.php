@@ -78,7 +78,7 @@
             <div class="container pos-rel">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="{{asset('img/about_img_2.jpg')}}" class="bordered-img" alt="">
+                        <img src="{{asset('img/about_img_3.jpg')}}" class="bordered-img" alt="">
                     </div>
                     <div class="col-md-6 ml-auto why-choose wow fadeInRight">
                         <!-- Heading Main -->

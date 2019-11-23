@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="slider bg-navy-blue bg-scroll pos-rel breadcrumbs-page"
-         style="background-image: url({{asset('img/breadcrumbs_bg.jpg')}});">
+         style="background-image: url({{asset('img/bg_15.jpg')}});">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -42,7 +42,7 @@
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-lg-5 col-12 p-0">
-                    <img src="{{asset('img/why-choose-us.jpg')}}" class="w-100" alt="">
+                    <img src="{{asset('img/bg_17.jpg')}}" class="w-100" alt="">
                 </div>
                 <div class="col-lg-6 col-12">
                     <div class="p-5 about-whoose">
