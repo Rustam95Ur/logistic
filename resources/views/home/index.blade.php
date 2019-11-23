@@ -8,7 +8,9 @@
                     <div class="Header-hero text-center">
                         {{--<h1>The best app you've <br/> ever seen</h1>--}}
                         <h1>Мы гарантируем движение</h1>
-                        <button class="btn-theme bg-white light mt-5" role="button" data-toggle="modal" data-target="#request_popup">Оставить заявку</button>
+                        <button class="btn-theme bg-white light mt-5" role="button" data-toggle="modal"
+                                data-target="#request_popup">Оставить заявку
+                        </button>
                     </div>
                 </div>
             </div>
@@ -20,12 +22,13 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-6">
                         <p><img src="{{asset('img/logo-region.png')}}" alt="" class="mb-5" width="200px"></p>
-                        <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг</p>
+                        <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая
+                            предлагает полный спектр экспедиторских услуг</p>
                         {{--<div class="img-icon mt-4 d-flex align-items-center">--}}
-                            {{--<img src="{{asset('img/team-1.jpg')}}" alt="image">--}}
-                            {{--<h3> John Morise--}}
-                                {{--<span>Founder &amp; CEO</span>--}}
-                            {{--</h3>--}}
+                        {{--<img src="{{asset('img/team-1.jpg')}}" alt="image">--}}
+                        {{--<h3> John Morise--}}
+                        {{--<span>Founder &amp; CEO</span>--}}
+                        {{--</h3>--}}
                         {{--</div>--}}
                     </div>
                     <!-- Spacer For Medium -->
@@ -92,10 +95,11 @@
                             {{trans('about.welcome')}}
                         </h1>
                         <!-- Heading Main -->
-                        <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая предлагает полный спектр экспедиторских услуг</p>
+                        <p>Мы активная и развивающаяся компания на рынке транспортно-экспедиторских услуг, которая
+                            предлагает полный спектр экспедиторских услуг</p>
                         {{--<p>Compellingly develop fully researched process improvements through innovative opportunities.--}}
-                            {{--Credibly productize highly efficient potentialities for vertical core competencies. Quickly--}}
-                            {{--maintain pandemic experiences rather than low-risk high-yield processes.</p>--}}
+                        {{--Credibly productize highly efficient potentialities for vertical core competencies. Quickly--}}
+                        {{--maintain pandemic experiences rather than low-risk high-yield processes.</p>--}}
                         <div class="skillbar-wrap">
                             <div class="clearfix">
                                 Логстика
@@ -252,188 +256,19 @@
                     </div>
                     <!-- Heading Main -->
                 </div>
-                <div class="cbp cbp-caption-active cbp-caption-zoom cbp-ready"
-                     style="height: 786px;">
-                    <div class="cbp-wrapper-outer" id="grid-container">
+                <div class="cbp-caption-active cbp-caption-zoom cbp-ready">
+                    <div id="grid-container">
                         <div class="cbp-wrapper">
-                            <div class="cbp-item lifestyle outstanding travel"
-                                 style="width: 277px; left: 0px; top: 0px;">
-                                <div class="cbp-item-wrapper">
-                                    <div class="gallery-link">
-                                        <a href="?project=project-1" class="txt-white"><i
-                                                class="icofont-external-link"></i></a>
-
-                                    </div>
-                                    <a href="{{asset('img/img-1.jpg')}}"
-                                       class="cbp-caption cbp-lightbox" data-title="Lorem ipsum">
+                            @foreach($galleries as $gallery)
+                                <div class="cbp-item">
+                                    <a href="{{ Voyager::image( $gallery->image ) }}" class="cbp-caption cbp-lightbox"
+                                       title="">
                                         <div class="cbp-caption-defaultWrap">
-                                            <img src="{{asset('img/img-1.jpg')}}" alt="">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <i class="icofont-search icofont-2x txt-white"></i>
-                                                </div>
-                                            </div>
+                                            <img src="{{ Voyager::image( $gallery->image ) }}" alt="">
                                         </div>
                                     </a>
                                 </div>
-                            </div>
-                            <div class="cbp-item lifestyle outstanding travel"
-                                 style="width: 277px; left: 277px; top: 0px;">
-                                <div class="cbp-item-wrapper">
-                                    <div class="gallery-link">
-                                        <a href="?project=project-2" class="txt-white"><i
-                                                class="icofont-external-link"></i></a>
-                                    </div>
-                                    <a href="{{asset('img/img-2.jpg')}}"
-                                       class="cbp-caption cbp-lightbox" data-title="Lorem ipsum">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="{{asset('img/img-2.jpg')}}" alt="">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <i class="icofont-search icofont-2x txt-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cbp-item lifestyle outstanding travel"
-                                 style="width: 554px; left: 554px; top: 0px;">
-                                <div class="cbp-item-wrapper">
-                                    <div class="gallery-link">
-                                        <a href="?project=project-3" class="txt-white"><i
-                                                class="icofont-external-link"></i></a>
-                                    </div>
-                                    <a href="{{asset('img/img-3.jpg')}}"
-                                       class="cbp-caption cbp-lightbox" data-title="Lorem ipsum">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="{{asset('img/img-3.jpg')}}" alt="">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <i class="icofont-search icofont-2x txt-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cbp-item lifestyle outstanding travel"
-                                 style="width: 554px; height: 524px; left: 0px; top: 262px;">
-                                <div class="cbp-item-wrapper">
-                                    <div class="gallery-link">
-                                        <a href="?project=project-4" class="txt-white"><i
-                                                class="icofont-external-link"></i></a>
-                                    </div>
-                                    <a href="{{asset('img/img-7.jpg')}}"
-                                       class="cbp-caption cbp-lightbox" data-title="Lorem ipsum">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="{{asset('img/img-7.jpg')}}" alt="">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <i class="icofont-search icofont-2x txt-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cbp-item lifestyle outstanding travel"
-                                 style="width: 277px; left: 554px; top: 262px;">
-                                <div class="cbp-item-wrapper">
-                                    <div class="gallery-link">
-                                        <a href="?project=project-5" class="txt-white"><i
-                                                class="icofont-external-link"></i></a>
-                                    </div>
-                                    <a href="{{asset('img/img-8.jpg')}}"
-                                       class="cbp-caption cbp-lightbox" data-title="Lorem ipsum">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="{{asset('img/img-8.jpg')}}" alt="">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <i class="icofont-search icofont-2x txt-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cbp-item lifestyle outstanding travel"
-                                 style="width: 277px; left: 831px; top: 262px;">
-                                <div class="cbp-item-wrapper">
-                                    <div class="gallery-link">
-                                        <a href="?project=project-6" class="txt-white"><i
-                                                class="icofont-external-link"></i></a>
-                                    </div>
-                                    <a href="{{asset('img/img-9.jpg')}}"
-                                       class="cbp-caption cbp-lightbox" data-title="Lorem ipsum">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="{{asset('img/img-9.jpg')}}" alt="">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <i class="icofont-search icofont-2x txt-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cbp-item lifestyle outstanding travel"
-                                 style="width: 277px; left: 554px; top: 524px;">
-                                <div class="cbp-item-wrapper">
-                                    <div class="gallery-link">
-                                        <a href="?project=project-7" class="txt-white"><i
-                                                class="icofont-external-link"></i></a>
-                                    </div>
-                                    <a href="{{asset('img/img-10.jpg')}}"
-                                       class="cbp-caption cbp-lightbox" data-title="Lorem ipsum">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="{{asset('img/img-10.jpg')}}" alt="">
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <i class="icofont-search icofont-2x txt-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cbp-item lifestyle outstanding travel"
-                                 style="width: 277px; left: 831px; top: 524px;">
-                                <div class="cbp-item-wrapper">
-                                    <div class="gallery-link">
-                                        <a href="?project=project-8" class="txt-white"><i
-                                                class="icofont-external-link"></i></a>
-                                    </div>
-                                    <a href="{{asset('img/img-11.jpg')}}"
-                                       class="cbp-caption cbp-lightbox" data-title="Lorem ipsum">
-                                        <div class="cbp-caption-defaultWrap">
-                                            <img src="{{asset('img/img-11.jpg')}}" alt="">
-
-                                        </div>
-                                        <div class="cbp-caption-activeWrap">
-                                            <div class="cbp-l-caption-alignCenter">
-                                                <div class="cbp-l-caption-body">
-                                                    <i class="icofont-search icofont-2x txt-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -507,149 +342,27 @@
                         <div class="owl-carousel owl-theme owl-loaded owl-drag" id="home-client-testimonials">
                             <div class="owl-stage-outer">
                                 <div class="owl-stage">
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team-2.jpg')}}"
-                                                             alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries
-                                                            Vokalia and Consonantia, there live the blind texts. Aliquam
-                                                            gravida, urna quis ornare imperdiet,</p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 540px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team-3.jpg')}}"
-                                                             alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries
-                                                            Vokalia and Consonantia, there live the blind texts. Aliquam
-                                                            gravida, urna quis ornare imperdiet,</p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
+                                    @foreach($comments as $comment)
+                                        <div class="owl-item">
+                                            <div class="item">
+                                                <div class="client-testimonial bg-wave">
+                                                    <div class="media">
+                                                        <div
+                                                            class="client-testimonial-icon rounded-circle bg-navy-blue">
+                                                            <img src="{{ Voyager::image( $comment->image ) }}"
+                                                                 alt="">
+                                                        </div>
+                                                        <div class="client-inner-content media-body">
+                                                            <p>{{$comment->getTranslatedAttribute('text', $locale, 'fallbackLocale')}}</p>
+                                                            <footer class="blockquote-footer">
+                                                                <cite>{{$comment->getTranslatedAttribute('full_name', $locale, 'fallbackLocale')}}</cite>
+                                                            </footer>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="owl-item active">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team-1.jpg')}}"
-                                                             alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries
-                                                            Vokalia and Consonantia, there live the blind texts. Aliquam
-                                                            gravida, urna quis ornare imperdiet,</p>
-
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: 540px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team-2.jpg')}}"
-                                                             alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries
-                                                            Vokalia and Consonantia, there live the blind texts. Aliquam
-                                                            gravida, urna quis ornare imperdiet,</p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team-3.jpg')}}"
-                                                             alt="">
-
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries
-                                                            Vokalia and Consonantia, there live the blind texts. Aliquam
-                                                            gravida, urna quis ornare imperdiet,</p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team-1.jpg')}}"
-                                                             alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries
-                                                            Vokalia and Consonantia, there live the blind texts. Aliquam
-                                                            gravida, urna quis ornare imperdiet,</p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 540px; margin-right: 30px;">
-                                        <div class="item">
-                                            <div class="client-testimonial bg-wave">
-                                                <div class="media">
-                                                    <div class="client-testimonial-icon rounded-circle bg-navy-blue">
-                                                        <img src="{{asset('img/team-2.jpg')}}"
-                                                             alt="">
-                                                    </div>
-                                                    <div class="client-inner-content media-body">
-                                                        <p>Far far away, behind the word mountains, far from the
-                                                            countries
-                                                            Vokalia and Consonantia, there live the blind texts. Aliquam
-                                                            gravida, urna quis ornare imperdiet,</p>
-                                                        <footer class="blockquote-footer"><cite title="Source Title">John
-                                                                Gerry Design Hunt</cite></footer>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="owl-nav">
@@ -679,8 +392,9 @@
                         </div>
                     </div>
                     <div class="col-sm-auto wow slideInUp">
-                        <a href="#" class="btn btn-theme bg-white bordered" role="button" data-toggle="modal" data-target="#request_popup">Интересно <i
-                                    class="icofont-rounded-right"></i></a>
+                        <a href="#" class="btn btn-theme bg-white bordered" role="button" data-toggle="modal"
+                           data-target="#request_popup">Интересно <i
+                                class="icofont-rounded-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -699,96 +413,14 @@
                         <div class="owl-carousel owl-theme owl-loaded owl-drag" id="home-clients">
                             <div class="owl-stage-outer">
                                 <div class="owl-stage">
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <img src="{{asset('img/client1.png')}}" alt="">
+                                    @foreach($clients as $client)
+                                        <div class="owl-item cloned">
+                                            <div class="item">
+                                                <img src="{{ Voyager::image( $client->image ) }}"
+                                                     alt="{{$client->title}}">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <img src="{{asset('img/client2.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <img src="{{asset('img/client3.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <img src="{{asset('img/client4.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <img src="{{asset('img/client5.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned">
-                                        <div class="item">
-                                            <img src="{{asset('img/client6.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item">
-                                        <div class="item">
-                                            <img src="{{asset('img/client1.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item">
-                                        <div class="item">
-                                            <img src="{{asset('img/client2.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item" >
-                                        <div class="item">
-                                            <img src="{{asset('img/client3.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active">
-                                        <div class="item">
-                                            <img src="{{asset('img/client4.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active">
-                                        <div class="item">
-                                            <img src="{{asset('img/client5.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active">
-                                        <div class="item">
-                                            <img src="{{asset('img/client6.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active">
-                                        <div class="item">
-                                            <img src="{{asset('img/client1.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active" style="width: 160px; margin-right: 30px;">
-                                        <div class="item">
-                                            <img src="{{asset('img/client2.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned active" style="width: 160px; margin-right: 30px;">
-                                        <div class="item">
-                                            <img src="{{asset('img/client3.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 160px; margin-right: 30px;">
-                                        <div class="item">
-                                            <img src="{{asset('img/client4.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 160px; margin-right: 30px;">
-                                        <div class="item">
-                                            <img src="{{asset('img/client5.png')}}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="owl-item cloned" style="width: 160px; margin-right: 30px;">
-                                        <div class="item">
-                                            <img src="{{asset('img/client6.png')}}" alt="">
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="owl-nav disabled">
@@ -821,7 +453,7 @@
         <div class="video-box">
             <!-- close-video -->
             <div class="close-video">
-               X
+                X
             </div><!-- /close-video -->
         </div><!-- /video-box -->
 
