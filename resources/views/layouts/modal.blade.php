@@ -163,3 +163,59 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="page_down_modal" tabindex="-1" role="dialog" aria-labelledby="messageModal"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <!-- Contact Details Start -->
+                <section class="pos-rel bg-light-gray">
+                    <div class="container-fluid p-0">
+                        <a href="#" class="close" data-dismiss="modal">
+                            <i class="icofont-close-line"></i>
+                        </a>
+                        <div class="d-lg-flex justify-content-end no-gutters mb-spacer-md">
+                            <div class="col-md-12 col-12 mt-3 mb-3">
+                                <h4 class="text-uppercase mt-3">{{trans('contact.any-questions')}}</h4>
+                                <h5>{{trans('contact.will-contact')}}</h5>
+                                <div class="screen-reader-response mt-3"></div>
+                                <form action="{{route('mail')}}" method="post"
+                                      class="col rounded-field entrance__form">
+                                    @csrf
+                                    <div class="form-row mb-4">
+                                        <div class="col">
+                                            <input type="text" name="name" class="form-control" required
+                                                   placeholder="{{trans('contact.name')}}">
+                                        </div>
+                                        <div class="col">
+                                            <input type="email" name="email" class="form-control" required
+                                                   placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-row mb-4">
+                                        <div class="col">
+                                            <input type="text" name="phone" class="form-control txtLogin" required
+                                                   placeholder="{{trans('contact.phone')}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-row mb-4">
+                                        <div class="col">
+                                        <textarea rows="7" name="message" placeholder="{{trans('contact.message')}}"
+                                                  required
+                                                  class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-row text-center">
+                                        <input type="submit" id="contactForm" value="{{trans('button.send')}}"
+                                               class="form-btn mx-auto btn-theme bg-orange">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
