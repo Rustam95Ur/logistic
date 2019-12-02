@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="{{asset('img/logo_footer.png')}}">
+    <link rel="shortcut icon" href="{{asset('img/logo-region.png')}}">
     <title>{{Voyager::setting('site.title')}}</title>
     <link rel="dns-prefetch" href="http://fonts.googleapis.com/">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">

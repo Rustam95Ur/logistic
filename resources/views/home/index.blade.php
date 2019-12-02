@@ -405,7 +405,7 @@
                             <div class="owl-stage-outer">
                                 <div class="owl-stage">
                                     @foreach($clients as $client)
-                                        <div class="owl-item cloned">
+                                        <div class="owl-item">
                                             <div class="item">
                                                 <img src="{{ Voyager::image( $client->image ) }}"
                                                      alt="{{$client->title}}">
