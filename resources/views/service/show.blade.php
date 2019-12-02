@@ -54,13 +54,13 @@
                             <div class="sidebar-secondary col-lg-12 col-md-6">
                                 <!-- Recent Post Widget Start -->
                                 <div class="widget-wrap">
-                                    <h3 class="h3-md fw-7 mb-4">Дригие сервисы</h3>
+                                    <h3 class="h3-md fw-7 mb-4">{{trans('service.list')}}</h3>
                                     <div class="blog-list-categories">
                                         <ul class="list-unstyled">
                                             @if(isset($services))
                                                 @foreach($services as $item)
                                                     <li class="{{($item->id == $service->id) ? 'active': null}}"><a
-                                                            href="{{route('service', $item->id)}}"> {{$service->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}</a>
+                                                            href="{{route('service', $item->id)}}"> {{$item->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}</a>
                                                     </li>
                                                 @endforeach
                                             @endif

@@ -782,6 +782,8 @@
 }
 .icon-box-1 img{
 	opacity: 0.5;
+	height: 290px;
+    width: 391px;
 
 	-webkit-transition: all 0.15s linear;
   -moz-transition: all 0.15s linear;
@@ -1359,6 +1361,7 @@
 .clients-bg .owl-carousel .owl-item img {
     display: inline-block;
     width: auto;
+	height: 100px;
 }
 
 /*------------------------------------------*/
