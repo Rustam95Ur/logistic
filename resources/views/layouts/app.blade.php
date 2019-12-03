@@ -114,7 +114,7 @@
                 cols: 3
             }, {
                 width: 480,
-                cols: 2
+                cols: 1
             }, {
                 width: 320,
                 cols: 1
