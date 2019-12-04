@@ -44,7 +44,7 @@
                                     <p><a href="tel:+77077667834" class="text-danger"> +7 707 766 78 34</a>- Жаркынай</p>
                                     <p>{{trans('service.request')}}</p>
                                     <a href="#" role="button" data-toggle="modal"
-                                       data-target="#request_popup" class="btn-theme bg-orange mt-3">{{trans('header.request')}}<i
+                                       data-target="#request_popup" class="btn-theme bg-green mt-3">{{trans('header.request')}}<i
                                             class="icofont-rounded-right"></i></a>
                                 </div>
                                 <!-- Sidebar Support Widget End -->

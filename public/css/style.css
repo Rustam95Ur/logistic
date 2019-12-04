@@ -154,7 +154,7 @@ a:focus {
 /*    Heading Style
 /*------------------------------------------*/
 .heading-main{
-    color:#ff3514;
+    color:#393185;
     font-size: 2.25rem;
     font-weight: 700;
     text-align: center;
@@ -704,7 +704,7 @@ h2.h2-xl { font-size: 1.5rem; }     /* 24px */
     font-weight: 700;
 }
 .contact-detail-shadow i {
-    color: #ff3514;
+    color: #009846;
     font-size: 1.25rem;
     margin-right: 15px;
 }

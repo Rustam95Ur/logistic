@@ -20,9 +20,9 @@
         <section class="wide-tb-80">
             <div class="container pos-rel">
                 <div class="row align-items-start">
-                    <div class="col-md-12 col-lg-4">
+                    <div class="col-md-12 col-lg-3">
                         <!-- Add Some Left Space -->
-                        <aside class="sidebar-spacer row">
+                        <aside class="row">
                             <!-- Sidebar Primary Start -->
                             <div class="sidebar-primary col-lg-12 col-md-6">
                                 <!-- Search Widget Start -->
@@ -30,7 +30,7 @@
                                     <h3 class="h3-md fw-7 mb-4">{{trans('shop.search')}}</h3>
                                     <form class="flex-nowrap col ml-auto footer-subscribe p-0">
                                         <input type="text" class="form-control" placeholder="{{trans('shop.search')}} …">
-                                        <button type="submit" class="btn btn-theme bg-orange"><i
+                                        <button type="submit" class="btn btn-theme bg-green"><i
                                                 class="icofont-search p-0"></i></button>
                                     </form>
                                 </div>
@@ -59,7 +59,7 @@
                                     <p><a href="tel:+77077667834" class="text-danger"> +7 707 766 78 34</a>- Жаркынай</p>
                                     <p>{{trans('service.request')}}</p>
                                     <a href="#" role="button" data-toggle="modal"
-                                       data-target="#request_popup" class="btn-theme bg-orange mt-3">{{trans('header.request')}}<i
+                                       data-target="#request_popup" class="btn-theme bg-green mt-3">{{trans('header.request')}}<i
                                             class="icofont-rounded-right"></i></a>
                                 </div>
                                 <!-- Sidebar Support Widget End -->
@@ -70,7 +70,7 @@
                         </aside>
                         <!-- Add Some Left Space -->
                     </div>
-                    <div class="col-md-12 col-lg-8 blog-list">
+                    <div class="col-md-12 col-lg-9 blog-list">
                         <div class="row">
                             <!-- Blog Items -->
                             @foreach($products as $product)

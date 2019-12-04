@@ -36,9 +36,9 @@
     height: 40px;
     line-height: 40px;
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
-    border: 2px solid #c0a97a;
+    border: 2px solid #ffffff;
     transform: translate(-50%, -50%) scale(0);
     transition: .3s ease-in-out;
 }
@@ -50,9 +50,9 @@
     height: 40px;
     line-height: 40px;
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 50%;
-    border: 2px solid #c0a97a;
+    border: 2px solid #ffffff;
     transform: translate(-50%, -50%) scale(0);
     transition: .3s ease-in-out;
 }
@@ -97,7 +97,7 @@
 .product-title:hover a:after {background: #c0a97a;}
 .product-price {
     font-size: 20px;
-    color: #c0a97a;
+    color: #393185;
     font-weight: 700;
 }
 
@@ -240,8 +240,8 @@
 }
 /* Product Price */
 .product-price {
-    display: flex;
-    align-items: center;
+    /*display: flex;*/
+    text-align: center;
 }
 
 .product-price span {
@@ -263,4 +263,17 @@
 }
 .cart-btn:hover {
     background-color: #64af3d;
+}
+
+#input-quantity2, #input-quantity {
+    width: 46px;
+    height: 46px;
+    border: 0;
+    background: #ebebeb;
+    font-size: 14px;
+    color: #434343;
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+    border-radius: 100%;
+    text-align: center;
 }

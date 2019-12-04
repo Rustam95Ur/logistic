@@ -95,7 +95,7 @@
                                             <div class="form-row">
                                                 <div class="col">
                                                     <div class="center-head"><span
-                                                            class="bg-blue-light txt-orange">{{trans('request.personal_detail')}}</span>
+                                                            class="bg-blue-light txt-green">{{trans('request.personal_detail')}}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -121,7 +121,7 @@
                                             <div class="form-row">
                                                 <div class="col pt-3">
                                                     <input type="submit" value="{{trans('button.send')}}"
-                                                           class="form-btn btn-theme bg-orange">
+                                                           class="form-btn btn-theme bg-green">
                                                 </div>
                                             </div>
                                         </div>
@@ -208,7 +208,7 @@
                                     </div>
                                     <div class="form-row text-center">
                                         <input type="submit" id="contactForm" value="{{trans('button.send')}}"
-                                               class="form-btn mx-auto btn-theme bg-orange">
+                                               class="form-btn mx-auto btn-theme bg-green">
                                     </div>
                                 </form>
                             </div>

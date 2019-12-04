@@ -7,6 +7,9 @@
 .txt-orange{
 	color: #ff3514;
 }
+.txt-green{
+    color: #009846;
+}
 .txt-ligt-gray{
 	color: #424242;
 }
@@ -83,6 +86,7 @@
 .bg-light-gray{ background: #fafafa; }
 .bg-navy-blue{ background: #2f3985; }
 .bg-orange{ background: #ff3514; }
+.bg-green{ background: #009846; }
 .bg-sky-blue{ background: #f1fbff; }
 .bg-blue-light{background: #ecf2f5;}
 

@@ -8,4 +8,5 @@ return [
     'search'        => 'Поиск',
     'add_cart'      => 'В корзину',
     'read_more'     => 'Подробнее',
+
 ];

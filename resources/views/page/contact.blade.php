@@ -88,7 +88,7 @@
                                 </div>
                                 <div class="form-row text-center">
                                     <input type="submit" id="contactForm" value="{{trans('button.send')}}"
-                                            class="form-btn mx-auto btn-theme bg-orange">
+                                            class="form-btn mx-auto btn-theme bg-green">
                                 </div>
                             </form>
                         </div>
