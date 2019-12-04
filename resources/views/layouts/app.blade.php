@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="{{asset('rev-slider/revolution/css/settings.css')}}" media="all">
     <link rel="stylesheet" href="{{asset('css/shortcodes.css')}}" media="all">
     <link rel="stylesheet" href="{{asset('css/slick.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/product.css')}}" media="all">
     <script src="{{asset('js/jquery/jquery.js')}}"></script>
     <script src="{{asset('js/jquery/jquery-migrate.min.js')}}"></script>
 </head>

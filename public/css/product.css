@@ -1,0 +1,102 @@
+* {box-sizing: border-box;}
+.product-wrap {
+    width: 300px;
+    margin: 0 auto;
+    background: white;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.product-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid;
+    border-radius: 10px;
+}
+.product-wrap img {
+    display: block;
+    width: 100%;
+}
+.product-buttons {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+.add-cart {
+    text-decoration: none;
+    color: #c0a97a;
+    font-size: 12px;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    border: 2px solid #c0a97a;
+    transform: translate(-50%, -50%) scale(0);
+    transition: .3s ease-in-out;
+}
+.read-more {
+    text-decoration: none;
+    color: #c0a97a;
+    font-size: 12px;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    border: 2px solid #c0a97a;
+    transform: translate(-50%, -50%) scale(0);
+    transition: .3s ease-in-out;
+}
+.add-cart:before {
+    content: "\f07a";
+    font-family: FontAwesome;
+    margin-right: 10px;
+}
+.read-more:before {
+    content: "\f06e";
+    font-family: FontAwesome;
+    margin-right: 10px;
+}
+.product-item:hover .product-buttons {opacity: 1;}
+.product-item:hover .add-cart {transform: translate(-50%, -50%) scale(1);}
+.product-item:hover .read-more {transform: translate(-50%, -50%) scale(1);}
+.add-cart:hover {background: black;}
+.read-more:hover {background: black;}
+.product-title {color: #5e5e5e;}
+.product-title a {
+    text-decoration: none;
+    color: #2e2e2e;
+    font-weight: 600;
+    margin: 15px 0 5px;
+    padding-bottom: 7px;
+    display: block;
+    position: relative;
+    transition: .3s ease-in-out;
+}
+.product-title a:after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: #2e2e2e;
+    left: 50%;
+    margin-left: -20px;
+    bottom: 0;
+    transition: .3s ease-in-out;
+}
+.product-title a:hover {color: #c0a97a;}
+.product-title:hover a:after {background: #c0a97a;}
+.product-price {
+    font-size: 20px;
+    color: #c0a97a;
+    font-weight: 700;
+}

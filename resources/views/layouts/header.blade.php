@@ -128,6 +128,7 @@
                 <li class="nav-link"><a href="{{route('home')}}">{{trans('header.home')}}</a></li>
                 <li class="nav-link"><a href="{{route('about')}}">{{trans('header.about')}}</a></li>
                 <li class="nav-link"><a href="{{route('services')}}">{{trans('header.services')}}</a></li>
+                <li class="nav-link"><a href="{{route('shop')}}">{{trans('header.shop')}}</a></li>
 {{--                <li class="nav-link"><a href="#">{{trans('header.cars')}}</a></li>--}}
                 <li class="nav-link"><a href="{{route('contact')}}">{{trans('header.contacts')}}</a></li>
             </ul>
