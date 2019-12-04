@@ -26,6 +26,8 @@ Route::group([
 
     Route::get('/product/{id}', 'Shop\ProductController@show')->name('product');
 
+    Route::get('/cart','Shop\ProductController@cart')->name('cart');
+
     Route::post('/send/request', 'Mail\BaseController@requestForm')->name('request');
     Route::post('/send/mail', 'Mail\BaseController@mailForm')->name('mail');
 });

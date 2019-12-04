@@ -21,5 +21,10 @@ class ProductController extends Controller
         ]);
     }
 
+    public function cart()
+    {
+        return view('product.cart');
+    }
+
 
 }

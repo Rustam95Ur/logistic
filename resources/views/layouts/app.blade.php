@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="{{asset('css/shortcodes.css')}}" media="all">
     <link rel="stylesheet" href="{{asset('css/slick.css')}}" media="all">
     <link rel="stylesheet" href="{{asset('css/product.css')}}" media="all">
+    <link rel="stylesheet" href="{{asset('css/cart.css')}}" media="all">
     <script src="{{asset('js/jquery/jquery.js')}}"></script>
     <script src="{{asset('js/jquery/jquery-migrate.min.js')}}"></script>
 </head>
@@ -92,6 +93,7 @@
 <script src="{{asset('js/masonary-custom.js')}}"></script>
 <script src="{{asset('js/site-custom.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
+<script src="{{asset('js/cart.js')}}"></script>
 <script src="{{asset('js/wp-embed.min.js')}}"></script>
 <script src="{{asset('js/dist/js_composer_front.min.js')}}"></script>
 <script type="text/javascript">
