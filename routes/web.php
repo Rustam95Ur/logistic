@@ -24,6 +24,8 @@ Route::group([
 
     Route::get('/shop', 'Shop\BaseController@index')->name('shop');
 
+    Route::get('/product/{id}', 'Shop\ProductController@show')->name('product');
+
     Route::post('/send/request', 'Mail\BaseController@requestForm')->name('request');
     Route::post('/send/mail', 'Mail\BaseController@mailForm')->name('mail');
 });

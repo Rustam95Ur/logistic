@@ -12,9 +12,20 @@ class Product extends Model
 
     protected $translatable = ['title', 'body', 'feature'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function categories()
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function country()
+    {
+        return $this->belongsTo('App\Models\Country', 'country_id', 'id');
     }
 
 }
