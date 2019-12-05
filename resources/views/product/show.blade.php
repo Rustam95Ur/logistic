@@ -34,15 +34,15 @@
                                     <h2>{{$product->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}</h2>
                                 </div>
                                 <!-- Product Configuration -->
-                                <div class="product-configuration"><!-- Product Color -->
-                                    <p class="text-center font-weight-bold">{{trans('product.description')}}</p>
+                                <div class="product-configuration">
+                                    <p class="text-center font-weight-bold text-uppercase">{{trans('product.description')}}</p>
                                     {!! $product->getTranslatedAttribute('body', $locale, 'fallbackLocale') !!}
                                     <hr>
                                     <p>{{trans('product.model')}}: <b>{{$product->model}}</b></p>
                                     <p>{{trans('product.country')}}: <b>{{$product->country->title}}</b></p>
                                     <!-- Cable Configuration -->
                                     <hr>
-                                    <p class="text-center font-weight-bold">{{trans('product.feature')}}</p>
+                                    <p class="text-center font-weight-bold text-uppercase">{{trans('product.feature')}}</p>
                                     {!! $product->getTranslatedAttribute('feature', $locale, 'fallbackLocale') !!}
                                     <hr>
                                     <h5>{{trans('product.price')}}: <b class="text-danger">{{$product->price}}</b></h5>

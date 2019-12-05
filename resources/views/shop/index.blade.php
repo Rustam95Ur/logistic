@@ -84,7 +84,7 @@
                                         </div>
                                     </div>
                                     <div class="product-title">
-                                        <a href="">{{$product->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}</a>
+                                        <a href="{{route('product', $product->id)}}">{{$product->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}</a>
                                         <span class="product-price">{{$product->price}}</span>
                                     </div>
                                 </div>
