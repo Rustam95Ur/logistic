@@ -28,7 +28,7 @@ class ProductController extends Controller
     {
         $locale = Locale::lang();
         $sessionItems = Session::get('cart');
-        dd($sessionItems);
+//        dd($sessionItems);
         $products = [];
         if ($sessionItems) {
             foreach ($sessionItems as $item) {
