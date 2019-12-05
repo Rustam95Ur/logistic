@@ -28,8 +28,8 @@ Route::group([
 
     Route::get('/cart','Shop\ProductController@cart')->name('cart');
 
-    Route::get('cart/add/{product_id}/{qty}', 'Shop\ProductController@addCart');
-    Route::get('cart/remove/{product_id}', 'Shop\ProductController@removeItemCart');
+    Route::get('/cart/add/{product_id}/{qty}', 'Shop\ProductController@addCart');
+    Route::get('/cart/remove/{product_id}/{qty}', 'Shop\ProductController@removeItemCart');
 
     Route::post('/send/request', 'Mail\BaseController@requestForm')->name('request');
     Route::post('/send/mail', 'Mail\BaseController@mailForm')->name('mail');

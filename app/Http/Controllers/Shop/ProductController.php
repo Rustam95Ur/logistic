@@ -92,23 +92,40 @@ class ProductController extends Controller
         return \Response::json(['success' => trans('shop.success.add-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
-    protected function removeItemCart($product_id)
+    protected function removeItemCart($product_id, $qty = 0)
     {
         $sessionItems = Session::get('cart');
-        if($sessionItems) {
+        if ($sessionItems) {
             $itemIndex = array_search($product_id, array_column($sessionItems, 'product_id'));
-            if($itemIndex != false) {
-                unset($sessionItems[$itemIndex]);
-                if($sessionItems) {
-                    Session::forget('cart');
+            if ($itemIndex !== false) {
+                Session::forget('cart');
+                if ($qty == 0) {
+                    unset($sessionItems[$itemIndex]);
+                }else {
+                    $results = [];
+                    for ($i = 0; $i < count($sessionItems); $i++) {
+                        if ($sessionItems[$i]['product_id'] == $product_id) {
+                            $sessionItems[$i]['qty'] =  $qty;
+                        }
+                        $newArray = [
+                            'product_id' => $sessionItems[$i]['product_id'],
+                            'qty' => $sessionItems[$i]['qty'],
+                        ];
+                        $results[$i] = $newArray;
+                    }
+                    foreach ($results as $result) {
+                        Session::push('cart', $result);
+                    }
+                    return \Response::json(['success' => trans('shop.success.remove-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+                }
+                if ($sessionItems) {
                     foreach ($sessionItems as $item) {
                         Session::push('cart', $item);
                     }
                 }
             }
             return \Response::json(['success' => trans('shop.success.remove-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
-        }
-        else {
+        } else {
             return \Response::json(['success' => trans('shop.success.remove-no-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
 
