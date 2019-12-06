@@ -57,12 +57,16 @@ class ProductController extends Controller
         ]);
     }
 
-
+    /**
+     * @param int $product_id
+     * @param int $qty
+     * @return \Illuminate\Http\JsonResponse
+     */
     protected function addCart(int $product_id, int $qty)
     {
         $checkProduct = Product::where('id', '=', $product_id)->firstOrFail();
         $countItem = $checkProduct->count;
-        if($qty > $countItem) {
+        if ($qty > $countItem) {
             return \Response::json(['error' => trans('shop.error.many-item')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
         $item = ['product_id' => $product_id, 'qty' => $qty];
@@ -71,29 +75,27 @@ class ProductController extends Controller
         if ($sessionItems and count($sessionItems) > 0) {
             $status = array_search($product_id, array_column($sessionItems, 'product_id'));
             if ($status === false) {
-                Session::forget('cart');
                 array_push($sessionItems, $item);
+                Session::forget('cart');
                 foreach ($sessionItems as $result) {
                     Session::push('cart', $result);
                 }
             } else {
-                Session::forget('cart');
                 for ($i = 0; $i < count($sessionItems); $i++) {
-                    if ($sessionItems[$i]['product_id'] == $product_id) {
-                       $sums = $sessionItems[$i]['qty'] + $qty;
-                    }
-                    if ($sessionItems[$i]['qty'] = $sessionItems[$i]['qty'] + $qty > $countItem) {
+                    $sum = ($sessionItems[$i]['product_id'] == $product_id) ? $sessionItems[$i]['qty'] + $qty : $sessionItems[$i]['qty'];
+                    if ($sum > $countItem) {
                         return \Response::json(['error' => trans('shop.error.many-item')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
                     }
                     $newArray = [
                         'product_id' => $sessionItems[$i]['product_id'],
-                        'qty' => $sums,
+                        'qty' => $sum,
                     ];
                     $results[$i] = $newArray;
                 }
-            }
-            foreach ($results as $result) {
-                Session::push('cart', $result);
+                Session::forget('cart');
+                foreach ($results as $result) {
+                    Session::push('cart', $result);
+                }
             }
         } else {
             Session::push('cart', $item);
@@ -101,8 +103,18 @@ class ProductController extends Controller
         return \Response::json(['success' => trans('shop.success.add-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
+    /**
+     * @param int $product_id
+     * @param int $qty
+     * @return \Illuminate\Http\JsonResponse
+     */
     protected function removeItemCart(int $product_id, int $qty = 0)
     {
+        $checkProduct = Product::where('id', '=', $product_id)->firstOrFail();
+        $countItem = $checkProduct->count;
+        if ($qty > $countItem) {
+            return \Response::json(['error' => trans('shop.error.many-item')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        }
         $sessionItems = Session::get('cart');
         if ($sessionItems) {
             $itemIndex = array_search($product_id, array_column($sessionItems, 'product_id'));
@@ -110,15 +122,13 @@ class ProductController extends Controller
                 Session::forget('cart');
                 if ($qty == 0) {
                     unset($sessionItems[$itemIndex]);
-                }else {
+                } else {
                     $results = [];
                     for ($i = 0; $i < count($sessionItems); $i++) {
-                        if ($sessionItems[$i]['product_id'] == $product_id) {
-                            $sessionItems[$i]['qty'] =  $qty;
-                        }
+                        $newQty = ($sessionItems[$i]['product_id'] == $product_id) ? $qty : $sessionItems[$i]['qty'];
                         $newArray = [
                             'product_id' => $sessionItems[$i]['product_id'],
-                            'qty' => $sessionItems[$i]['qty'],
+                            'qty' => $newQty
                         ];
                         $results[$i] = $newArray;
                     }
@@ -137,8 +147,5 @@ class ProductController extends Controller
         } else {
             return \Response::json(['success' => trans('shop.success.no-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
-
     }
-
-
 }
