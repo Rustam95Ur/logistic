@@ -33,6 +33,11 @@ Route::group([
 
     Route::post('/send/request', 'Mail\BaseController@requestForm')->name('request');
     Route::post('/send/mail', 'Mail\BaseController@mailForm')->name('mail');
+
+    //Exline routes
+    Route::get('/shipping/origin', 'Shipping\ExlineController@getOrigin');
+    Route::get('/shipping/destinations/{county}', 'Shipping\ExlineController@getDestinations');
+    Route::get('/shipping/calculate/{origin_id}/{destination_id}/{weight}', 'Shipping\ExlineController@getCalculate');
 });
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

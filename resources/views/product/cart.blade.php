@@ -53,14 +53,12 @@
                     <footer id="site-footer">
                         <div class="container clearfix">
                             <div class="left">
-                                <h2 class="subtotal">{{trans('shop.subtotal')}}: <b class="font-weight-bold">{{$subtotal}}</b>
+                                <h2 class="subtotal">{{trans('shop.subtotal')}}:<b class="font-weight-bold">{{$subtotal}}</b>
                                 </h2>
-                                <h3 class="tax">{{trans('shop.taxes')}} (5%): <b class="font-weight-bold">8.2</b></h3>
-                                <h3 class="shipping">{{trans('shop.shipping')}}: <b class="font-weight-bold">5.00</b>
-                                </h3>
                             </div>
                             <div class="right">
-                                <h1 class="total">{{trans('shop.total')}}: <b class="font-weight-bold">{{$subtotal}}</b></h1>
+                                <h1 class="total">{{trans('shop.total')}}: <b class="font-weight-bold">{{$subtotal}}</b>
+                                </h1>
                                 <a class="btn-buy">{{trans('button.buy')}}</a>
                             </div>
                         </div>

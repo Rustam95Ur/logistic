@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Api\ExlineApi;
 use App\Models\Service;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        ExlineApi::init();
     }
 
     /**
