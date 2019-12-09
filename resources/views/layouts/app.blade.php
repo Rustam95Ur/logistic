@@ -153,5 +153,50 @@
         }
     };
 </script>
+<script>
+    (function ($) {
+        $(".cartId").click(function(e) {
+            e.preventDefault();
+            var product_id = $(this).attr("id");
+            var qtn = 1;
+            $.ajax({
+                type: "GET",
+                url: 'cart/add/'+product_id+'/'+qtn,
+                success: function(data) {
+                    alert('Товар добавлен в корзину!');
+                    setTimeout(explode, 2000);
+                    console.log(data)
+                },
+                error: function(data) {
+                    alert('Ошибка добавления товара!');
+                    console.log(data)
+                }
+            });
+        });
+    })(jQuery);
+</script>
+<script>
+    (function ($) {
+        $(".remove").click(function(e) {
+            e.preventDefault();
+            var product_id = $(this).attr("id");
+            var qtn = 0;
+            $.ajax({
+                type: "GET",
+                url: 'cart/remove/'+product_id+'/'+qtn,
+                success: function(data) {
+                        console.log(data);
+                        alert("Товар удален с корзины!")
+                        setTimeout(explode, 2000);
+                },
+                error: function(data) {
+                    alert('Произошла ошибка во время удаления!');
+                    setTimeout(explode, 2000);
+                    console.log(data)
+                }
+            });
+        });
+    })(jQuery);
+</script>
 </body>
 </html>
