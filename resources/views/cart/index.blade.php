@@ -21,7 +21,7 @@
                         @foreach($products as $product)
                             <article class="product">
                                 <header>
-                                    <a class="remove">
+                                    <a class="remove" id="{{$product['id']}}">
                                         <img src="{{$product['image']}}" alt="">
                                         <h3>{{trans('shop.remove-item')}}</h3>
                                     </a>

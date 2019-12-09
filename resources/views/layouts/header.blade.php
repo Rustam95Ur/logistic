@@ -131,6 +131,7 @@
                 <li class="nav-link"><a href="{{route('shop')}}">{{trans('header.shop')}}</a></li>
 {{--                <li class="nav-link"><a href="#">{{trans('header.cars')}}</a></li>--}}
                 <li class="nav-link"><a href="{{route('contact')}}">{{trans('header.contacts')}}</a></li>
+                <li class="nav-link"><a href="{{route('cart')}}"><span class="icofont-cart">(0)</span></a></li>
             </ul>
         </div>
         </div>

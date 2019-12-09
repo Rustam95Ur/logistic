@@ -49,7 +49,7 @@
                                 </div>
                                 <!-- Product Pricing -->
                                 <div class="product-price mt-4">
-                                    <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="">
+                                    <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="" >
                                     <a class="cart-btn" href="#">{{trans('shop.add_cart')}}</a>
                                 </div>
                             </div>
@@ -60,4 +60,5 @@
         </section>
         <!-- What We Offer End -->
     </main>
+
 @endsection
