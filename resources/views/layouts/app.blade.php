@@ -164,6 +164,7 @@
                 url: 'cart/add/'+product_id+'/'+qtn,
                 success: function(data) {
                     alert('Товар добавлен в корзину!');
+                    setTimeout(explode, 2000);
                     console.log(data)
                 },
                 error: function(data) {
