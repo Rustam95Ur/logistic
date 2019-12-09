@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Shop;
 use App\Api\ExlineApi;
 use App\Http\Controllers\Controller;
 use App\Locale;
+use App\Models\Country;
 use App\Models\Product;
 use Session;
 use TCG\Voyager\Facades\Voyager;
@@ -20,6 +21,7 @@ class CheckoutController extends Controller
         $locale = Locale::lang();
         $sessionItems = Session::get('cart');
         if ($sessionItems) {
+            $countries = Country::where('code', '!=', null)->get();
             $products = [];
             foreach ($sessionItems as $item) {
                 $product = Product::where('id', '=', $item['product_id'])->with('country')->first();
@@ -37,7 +39,8 @@ class CheckoutController extends Controller
             }
             return view('checkout.index', [
                 'products' => $products,
-                'totalSum' => $totalSum
+                'totalSum' => $totalSum,
+                'countries' => $countries,
             ]);
         } else {
             return redirect()->back();
