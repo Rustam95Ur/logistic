@@ -76,7 +76,7 @@
                             @foreach($products as $product)
                             <div class="col-md-4">
                                 <div class="blog-warp">
-                                    <div class="product-item" style="height: 100px">
+                                    <div class="product-item">
                                         <img src="{{Voyager::image($product->image)}}" class="rounded">
                                         <div class="product-buttons">
                                             <a href="#" class="add-cart text-white cartId" id="{{ $product->id }}">{{trans('shop.add_cart')}}</a>
