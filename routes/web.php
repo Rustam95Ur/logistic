@@ -26,10 +26,12 @@ Route::group([
 
     Route::get('/product/{id}', 'Shop\ProductController@show')->name('product');
 
-    Route::get('/cart','Shop\ProductController@cart')->name('cart');
+    Route::get('/cart','Shop\CartController@cart')->name('cart');
 
-    Route::get('/cart/add/{product_id}/{qty}', 'Shop\ProductController@addCart');
-    Route::get('/cart/remove/{product_id}/{qty}', 'Shop\ProductController@removeItemCart');
+    Route::get('/cart/add/{product_id}/{qty}', 'Shop\CartController@addCart');
+    Route::get('/cart/remove/{product_id}/{qty}', 'Shop\CartController@removeItemCart');
+
+    Route::get('/checkout', 'Shop\CheckoutController@checkout')->name('checkout');
 
     Route::post('/send/request', 'Mail\BaseController@requestForm')->name('request');
     Route::post('/send/mail', 'Mail\BaseController@mailForm')->name('mail');

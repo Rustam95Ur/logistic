@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('model');
             $table->integer('country_id');
             $table->integer('price');
+            $table->float('weight');
             $table->integer('count');
             $table->string('image');
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');

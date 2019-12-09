@@ -52,14 +52,14 @@
                 <div class="col-md-12 col-lg-5">
                     <footer id="site-footer">
                         <div class="container clearfix">
-                            <div class="left">
-                                <h2 class="subtotal">{{trans('shop.subtotal')}}:<b class="font-weight-bold">{{$subtotal}}</b>
-                                </h2>
-                            </div>
+{{--                            <div class="left">--}}
+{{--                                <h2 class="subtotal">{{trans('shop.subtotal')}}:<b class="font-weight-bold">{{$subtotal}}</b>--}}
+{{--                                </h2>--}}
+{{--                            </div>--}}
                             <div class="right">
                                 <h1 class="total">{{trans('shop.total')}}: <b class="font-weight-bold">{{$subtotal}}</b>
                                 </h1>
-                                <a class="btn-buy">{{trans('button.buy')}}</a>
+                                <a href="{{route('checkout')}}" class="btn-buy">{{trans('button.buy')}}</a>
                             </div>
                         </div>
                     </footer>
