@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    <link rel="stylesheet" href="{{asset('css/loader.css')}}" media="all">
     <div class="slider bg-navy-blue bg-scroll pos-rel breadcrumbs-page"
          style="background-image: url({{asset('img/shop-bg.jpg')}});">
         <div class="container">
@@ -78,6 +79,34 @@
                                        for="courier">{{trans('checkout.courier-service')}} </label>
                             </div>
                         </div>
+                        <div class="boxes-block" id="loader">
+                            <div class="boxes" >
+                                <div class="box">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="box">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="box">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="box">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row" id="courierType" style="display: none">
                             <div class="col-md-6 mb-3">
                                 <label for="country">{{trans('checkout.address.country')}}</label>
@@ -140,6 +169,7 @@
                             type: "GET",
                             dataType: "json",
                             beforeSend: function () {
+                                $('#loader').show();
                                 $('select[name="city"]').empty();
                             },
                             success: function (data) {
@@ -148,9 +178,9 @@
                                     $('select[name="city"]').append('<option value="' + value.id + '">' + value.title + '</option>');
                                 });
                             },
-                            // complete: function () {
-                            //     $('#loader').css("visibility", "hidden");
-                            // }
+                            complete: function () {
+                                $('#loader').hide();
+                            }
                         });
                     } else {
                         $('select[name="city"]').empty();
