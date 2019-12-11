@@ -53,7 +53,7 @@ class CartController extends Controller
         $checkProduct = Product::where('id', '=', $product_id)->firstOrFail();
         $countItem = $checkProduct->count;
         if ($qty > $countItem) {
-            return \Response::json(['error' => trans('shop.error.many-item')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+            return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
         $item = ['product_id' => $product_id, 'qty' => $qty];
         $sessionItems = Session::get('cart');
@@ -70,7 +70,7 @@ class CartController extends Controller
                 for ($i = 0; $i < count($sessionItems); $i++) {
                     $sum = ($sessionItems[$i]['product_id'] == $product_id) ? $sessionItems[$i]['qty'] + $qty : $sessionItems[$i]['qty'];
                     if ($sum > $countItem) {
-                        return \Response::json(['error' => trans('shop.error.many-item')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+                        return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
                     }
                     $newArray = [
                         'product_id' => $sessionItems[$i]['product_id'],
@@ -99,7 +99,7 @@ class CartController extends Controller
         $checkProduct = Product::where('id', '=', $product_id)->firstOrFail();
         $countItem = $checkProduct->count;
         if ($qty > $countItem) {
-            return \Response::json(['error' => trans('shop.error.many-item')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+            return \Response::json(['error' => trans('shop.error.many-item')], 400, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
         $sessionItems = Session::get('cart');
         if ($sessionItems) {
@@ -131,7 +131,15 @@ class CartController extends Controller
             }
             return \Response::json(['success' => trans('shop.success.remove-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         } else {
-            return \Response::json(['success' => trans('shop.success.no-cart')], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+            return \Response::json(['success' => trans('shop.success.no-cart')], 404, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
         }
+    }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function countItemCart()
+    {
+       return \Response::json([ 'count' => $countCartItem = (Session::get('cart')) ? count(Session::get('cart')) : 0], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE );
     }
 }
