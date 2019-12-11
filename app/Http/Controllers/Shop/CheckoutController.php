@@ -22,6 +22,7 @@ class CheckoutController extends Controller
         $sessionItems = Session::get('cart');
         if ($sessionItems) {
             $countries = Country::where('code', '!=', null)->get();
+
             $products = [];
             foreach ($sessionItems as $item) {
                 $product = Product::where('id', '=', $item['product_id'])->with('country')->first();

@@ -32,7 +32,7 @@
                                     <small class="text-muted">{{trans('checkout.count')}}: <b>{{$product['qty']}}</b>
                                     </small>
                                 </div>
-                                <span class="text-muted">{{$product['qty'] * $product['price']}}</span>
+                                <span><b>{{$product['qty'] * $product['price']}}</b></span>
                             </li>
                         @endforeach
                         <li class="list-group-item d-flex justify-content-between">

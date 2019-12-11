@@ -25,10 +25,10 @@ Route::group([
     Route::get('/shop', 'Shop\BaseController@index')->name('shop');
 
     Route::get('/product/{id}', 'Shop\ProductController@show')->name('product');
+    Route::get('/product/search/{name}', 'Shop\ProductController@search');
 
-    Route::get('/cart','Shop\CartController@cart')->name('cart');
-    Route::get('/cart/count','Shop\CartController@countItemCart');
-
+    Route::get('/cart', 'Shop\CartController@cart')->name('cart');
+    Route::get('/cart/count', 'Shop\CartController@countItemCart');
 
     Route::get('/cart/add/{product_id}/{qty}', 'Shop\CartController@addCart');
     Route::get('/cart/remove/{product_id}/{qty}', 'Shop\CartController@removeItemCart');

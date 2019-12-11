@@ -27,6 +27,7 @@
                         <li><a href="{{route('about')}}"><i class="icofont-simple-right"></i> <span>{{trans('header.about')}}</span></a></li>
                         <li><a href="{{route('services')}}"><i class="icofont-simple-right"></i> <span>{{trans('header.services')}}</span></a></li>
                         <li><a href="{{route('contact')}}"><i class="icofont-simple-right"></i> <span>{{trans('header.contacts')}}</span></a></li>
+                        <li><a href="{{route('shop')}}"><i class="icofont-simple-right"></i> <span>{{trans('header.shop')}}</span></a></li>
                     </ul>
                 </div>
             </div>
