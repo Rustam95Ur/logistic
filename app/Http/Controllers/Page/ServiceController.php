@@ -25,6 +25,10 @@ class ServiceController extends Controller
         ]);
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show($id)
     {
         $service = Service::where('id', '=', $id)->firstOrFail();
