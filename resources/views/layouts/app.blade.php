@@ -155,93 +155,95 @@
 </script>
 <script>
     (function ($) {
-        $(".cartId").click(function(e) {
+        $(".cartId").click(function (e) {
             e.preventDefault();
             var product_id = $(this).attr("id");
             var qtn = $('#input-quantity').val();
             $.ajax({
                 type: "GET",
-                url: '/cart/add/'+product_id+'/'+qtn,
-                success: function(data) {
-                    var count = countItem();
-                    console.log(count);
+                url: '/cart/add/' + product_id + '/' + qtn,
+                success: function (data) {
                     $(function () {
                         $('#text').html("")
                         $('#text').html(data.success)
                         $('#AddtoCart').modal('show');
-                        setTimeout(function(){$('#AddtoCart').modal('hide')},3000);
+                        setTimeout(function () {
+                            $('#AddtoCart').modal('hide')
+                        }, 3000);
 
                     });
                 },
-                error: function(data) {
+                error: function (data) {
                     $('#text').html(data.responseJSON.error)
                     $('#AddtoCart').modal('show');
-                    setTimeout(function(){$('#AddtoCart').modal('hide')},3000);
+                    setTimeout(function () {
+                        $('#AddtoCart').modal('hide')
+                    }, 3000);
                 }
             });
         });
-    })(jQuery);
 
 
-    function countItem() {
-        $.ajax({
-            type: "GET",
-            url: '/cart/count',
-            success: function (data){
-                return data.count
-            }
-        })
-    }
-</script>
-<script>
-    (function ($) {
-        $(".removeAll").click(function(e) {
+        $(".removeAll").click(function (e) {
             e.preventDefault();
             var product_id = $(this).attr("id");
             var qtn = 0;
             $.ajax({
                 type: "GET",
-                url: '/cart/remove/'+product_id+'/'+qtn,
-                success: function(data) {
-                        $('#text').html(data.success)
-                        $('#AddtoCart').modal('show');
-                        setTimeout(function(){$('#AddtoCart').modal('hide')},2000);
+                url: '/cart/remove/' + product_id + '/' + qtn,
+                success: function (data) {
+                    $('#text').html(data.success)
+                    $('#AddtoCart').modal('show');
+                    setTimeout(function () {
+                        $('#AddtoCart').modal('hide')
+                    }, 2000);
                 },
-                error: function(data) {
+                error: function (data) {
                     $('#text').html(data.error)
                     $('#AddtoCart').modal('show');
-                    setTimeout(function(){$('#AddtoCart').modal('hide')},2000);
+                    setTimeout(function () {
+                        $('#AddtoCart').modal('hide')
+                    }, 2000);
 
                 }
             });
         });
-    })(jQuery);
-</script>
 
-<script>
-    (function ($) {
-        $(".remove").click(function(e) {
+        $(".remove").click(function (e) {
             e.preventDefault();
             var product_id = $(this).attr("id");
             var qtn = $('#input_remove').html();
             qtn = (qtn != 1) ? qtn - 1 : qtn;
-            console.log(qtn)
             $.ajax({
                 type: "GET",
-                url: '/cart/remove/'+product_id+'/'+qtn,
-                success: function(data) {
+                url: '/cart/remove/' + product_id + '/' + qtn,
+                success: function (data) {
                     $('#text').html(data.success)
                     $('#AddtoCart').modal('show');
-                    setTimeout(function(){$('#AddtoCart').modal('hide')},2000);
+                    setTimeout(function () {
+                        $('#AddtoCart').modal('hide')
+                    }, 2000);
                 },
-                error: function(data) {
+                error: function (data) {
                     $('#text').html(data.error)
                     $('#AddtoCart').modal('show');
-                    setTimeout(function(){$('#AddtoCart').modal('hide')},2000);
+                    setTimeout(function () {
+                        $('#AddtoCart').modal('hide')
+                    }, 2000);
                     console.log(data)
                 }
             });
         });
+
+        function countItem() {
+            $.ajax({
+                type: "GET",
+                url: '/cart/count',
+                success: function (data) {
+                   /////
+                }
+            });
+        }
     })(jQuery);
 </script>
 </body>
