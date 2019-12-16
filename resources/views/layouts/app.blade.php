@@ -198,6 +198,7 @@
                     setTimeout(function () {
                         $('#AddtoCart').modal('hide')
                     }, 2000);
+                    countItem();
                 },
                 error: function (data) {
                     $('#text').html(data.error)
@@ -224,6 +225,7 @@
                     setTimeout(function () {
                         $('#AddtoCart').modal('hide')
                     }, 2000);
+                    countItem();
                 },
                 error: function (data) {
                     $('#text').html(data.error)

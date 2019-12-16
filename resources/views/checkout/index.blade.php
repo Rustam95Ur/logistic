@@ -35,9 +35,14 @@
                                 <span><b>{{$product['qty'] * $product['price']}}</b></span>
                             </li>
                         @endforeach
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span id="tarifName"></span>
+                                <strong id="tarifCheked"></strong>
+                            </li>
+
                         <li class="list-group-item d-flex justify-content-between">
                             <span>{{trans('shop.total')}}</span>
-                            <strong>{{$totalSum}}</strong>
+                            <strong id="totalPrice">{{$totalSum}}</strong>
                         </li>
                     </ul>
                 </div>
@@ -120,11 +125,35 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="address">{{trans('checkout.address.city')}}</label>
-                                <select class="custom-select d-block w-100" id="country" name="city" required="">
+                                <select class="custom-select d-block w-100" id="city" name="city" required="">
                                     <option disabled selected>{{trans('checkout.choose.city')}}</option>
                                 </select>
+                                <input type="hidden" id="weight" value="{{$totalWeight}}">
+                                <input type="hidden" id="originId" value="{{$originId}}">
                             </div>
                         </div>
+
+
+                        <div id="tarif" style="display: none">
+                            <hr class="mb-4">
+                            <h4 class="mb-3">Тариф</h4>
+                            <div class="d-block my-3">
+                                <div class="custom-control custom-radio">
+                                    <input id="express" name="tarif" type="radio" class="custom-control-input"
+                                           checked="" required="" value="">
+                                    <label class="custom-control-label"
+                                           for="express">Express - <span id="expressPrice"></span></label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input id="standard" name="tarif" type="radio" class="custom-control-input"
+                                           checked="true" required="" value="">
+                                    <label class="custom-control-label"
+                                           for="standard">Standard - <span id="standardPrice"></span></label>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <hr class="mb-4">
                         <h4 class="mb-3">{{trans('checkout.payment-type')}}</h4>
                         <div class="d-block my-3">
@@ -151,6 +180,31 @@
     <script>
         (function ($) {
             $(function () {
+                $("select[name='city']").change(function () {
+                    var origin_id = $('#originId').val();
+                    var destination_id = $('#city').val();
+                    var weight = $('#weight').val();
+                    $.ajax({
+                        url: '/shipping/calculate/'+origin_id+'/'+destination_id+'/'+weight,
+                        success: function (data) {
+                            console.log(data)
+                            $('#expressPrice').html();
+                            $('#standardPrice').html();
+                            $('#expressPrice').html(data.express.price);
+                            $('#standardPrice').html(data.standard.price);
+                            $("input[id='standard']").val(data.standard.price)
+                            $("input[id='express']").val(data.express.price);
+
+                            $('#tarifName').html('Standard');
+                            $('#tarifCheked').html(data.standard.price);
+
+                            var totalPrice = $('#totalPrice').html();
+
+                            $('#totalPrice').html(parseFloat(totalPrice) + parseFloat(data.standard.price))
+                        }
+                    })
+                    $('#tarif').show();
+                });
                 $("input[name='shippingType']").change(function () {
                     var type = $(this).val();
                     if (type === 'courier') {
