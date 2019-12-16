@@ -210,7 +210,7 @@
             });
         });
 
-        $(".remove").click(function (e) {
+        $(".removeItem").click(function (e) {
             e.preventDefault();
             var product_id = $(this).attr("id");
             var qtn = $('#input_remove').html();
@@ -245,6 +245,22 @@
                 }
             });
         }
+
+        $(".remove").click(function () {
+            var el = $(this);
+            el.parent().parent().addClass("removed");
+            window.setTimeout(
+                function () {
+                    el.parent().parent().slideUp('fast', function () {
+                        el.parent().parent().remove();
+                        if ($(".product").length == 0) {
+                            $("#cart").html("<h1>{{trans('shop.success.no-cart')}}</h1>");
+                        }
+                        changeTotal();
+                    });
+                }, 200);
+            $("#total").html(0);
+        });
     })(jQuery);
 </script>
 </body>

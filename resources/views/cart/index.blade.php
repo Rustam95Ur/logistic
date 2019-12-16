@@ -21,7 +21,7 @@
                         @foreach($products as $product)
                             <article class="product">
                                 <header>
-                                    <a class="removeAll" id="{{$product['id']}}">
+                                    <a class="removeAll remove" id="{{$product['id']}}">
                                         <img src="{{$product['image']}}" alt="">
                                         <h3>{{trans('shop.remove-item')}}</h3>
                                     </a>
@@ -36,7 +36,7 @@
                                 </div>
                                 <footer class="content">
                                     <input type="hidden" id="input-quantity" value="1">
-                                    <span class="qt-minus remove" id="{{$product['id']}}">-</span>
+                                    <span class="qt-minus removeItem" id="{{$product['id']}}">-</span>
                                     <span class="qt" id="input_remove" >{{$product['qty']}}</span>
                                     <span class="qt-plus cartId" id="{{$product['id']}}">+</span>
                                     <h2 class="full-price">
@@ -58,7 +58,7 @@
 {{--                                </h2>--}}
 {{--                            </div>--}}
                             <div class="right">
-                                <h1 class="total">{{trans('shop.total')}}: <b class="font-weight-bold">{{$subtotal}}</b>
+                                <h1 class="total">{{trans('shop.total')}}: <b class="font-weight-bold" id="total">{{$subtotal}}</b>
                                 </h1>
                                 <a href="{{route('checkout')}}" class="btn-buy">{{trans('button.buy')}}</a>
                             </div>
