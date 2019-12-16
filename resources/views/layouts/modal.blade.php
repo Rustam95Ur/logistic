@@ -164,6 +164,17 @@
     </div>
 </div>
 
+
+<div class="modal fade" id="AddtoCart" tabindex="-1" role="dialog" aria-labelledby="messageModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <p id="text"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="page_down_modal" tabindex="-1" role="dialog" aria-labelledby="messageModal"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">

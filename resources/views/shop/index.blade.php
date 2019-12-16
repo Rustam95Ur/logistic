@@ -79,6 +79,7 @@
                                     <div class="product-item">
                                         <img src="{{Voyager::image($product->image)}}" class="rounded">
                                         <div class="product-buttons">
+                                            <input type="hidden" value="1" id="input-quantity">
                                             <a href="#" class="add-cart text-white cartId" id="{{ $product->id }}">{{trans('shop.add_cart')}}</a>
                                             <a href="{{route('product', $product->id)}}" class="read-more text-white">{{trans('shop.read_more')}}</a>
                                         </div>
