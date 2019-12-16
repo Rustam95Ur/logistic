@@ -30,7 +30,8 @@ class CheckoutController extends Controller
                     'id' => $product->id,
                     'title' => $product->getTranslatedAttribute('title', $locale, 'fallbackLocale'),
                     'price' => $product->price,
-                    'qty' => $item['qty']
+                    'qty' => $item['qty'],
+                    'weight' => $product->weight,
                 ];
                 array_push($products, $results);
             }
@@ -38,10 +39,15 @@ class CheckoutController extends Controller
             foreach ($products as $product) {
                 $totalSum += $product['price'] * $product['qty'];
             }
+            $totalWeight= 0;
+            foreach ($products as $product) {
+                $totalWeight += $product['weight']* $product['qty'];
+            }
             return view('checkout.index', [
                 'products' => $products,
                 'totalSum' => $totalSum,
                 'countries' => $countries,
+                'totalWeight' => $totalWeight
             ]);
         } else {
             return redirect()->back();
