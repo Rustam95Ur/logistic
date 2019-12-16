@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Api\ExlineApi;
+use App\Models\Product;
 use App\Models\Service;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -34,8 +35,10 @@ class AppServiceProvider extends ServiceProvider
             $services = Service::all();
             $count = 0;
             $countCartItems = Session::get('cart');
-            foreach ($countCartItems as $item) {
-                $count += $item['qty'];
+            if ($countCartItems != false ) {
+                foreach ($countCartItems as $item) {
+                    $count += $item['qty'];
+                }
             }
             $locale = Locale::lang();
             $view->with('locale', $locale)->with('services', $services)->with('countCart', $count);
