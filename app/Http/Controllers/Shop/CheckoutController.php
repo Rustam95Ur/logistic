@@ -20,6 +20,10 @@ class CheckoutController extends Controller
     {
         $locale = Locale::lang();
         $sessionItems = Session::get('cart');
+        $getOrigin =  ExlineApi::getOrigin();
+        if ($getOrigin->IsSuccessful()) {
+            $originId = $getOrigin->GetPayload();
+        }
         if ($sessionItems) {
             $countries = Country::where('code', '!=', null)->get();
 
@@ -47,7 +51,8 @@ class CheckoutController extends Controller
                 'products' => $products,
                 'totalSum' => $totalSum,
                 'countries' => $countries,
-                'totalWeight' => $totalWeight
+                'totalWeight' => $totalWeight,
+                'originId' => $originId['regions'][0]['id'],
             ]);
         } else {
             return redirect()->back();
