@@ -32,9 +32,13 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*', function($view)
         {
             $services = Service::all();
-            $countCartItem = (Session::get('cart')) ? count(Session::get('cart')) : 0;
+            $count = 0;
+            $countCartItems = Session::get('cart');
+            foreach ($countCartItems as $item) {
+                $count += $item['qty'];
+            }
             $locale = Locale::lang();
-            $view->with('locale', $locale)->with('services', $services)->with('countCart', $countCartItem);
+            $view->with('locale', $locale)->with('services', $services)->with('countCart', $count);
         });
     }
 }
