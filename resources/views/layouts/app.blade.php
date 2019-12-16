@@ -170,6 +170,7 @@
                         setTimeout(function () {
                             $('#AddtoCart').modal('hide')
                         }, 3000);
+                        countItem();
 
                     });
                 },
@@ -240,7 +241,7 @@
                 type: "GET",
                 url: '/cart/count',
                 success: function (data) {
-                   /////
+                    $('#cartCount').html(data.count);
                 }
             });
         }
