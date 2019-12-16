@@ -140,6 +140,13 @@ class CartController extends Controller
      */
     protected function countItemCart()
     {
-       return \Response::json([ 'count' => $countCartItem = (Session::get('cart')) ? count(Session::get('cart')) : 0], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE );
+        $count = 0;
+        $countCartItems = Session::get('cart');
+        if ($countCartItems != false ) {
+            foreach ($countCartItems as $item) {
+                $count += $item['qty'];
+            }
+        }
+       return \Response::json([ 'count' => $count], 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE );
     }
 }

@@ -241,7 +241,7 @@
                 type: "GET",
                 url: '/cart/count',
                 success: function (data) {
-                    $('#cartCount').html(data.count);
+                    $('#cartCount').html('(' + data.count + ')');
                 }
             });
         }
