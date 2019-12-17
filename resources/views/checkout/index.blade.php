@@ -187,7 +187,6 @@
                     $.ajax({
                         url: '/shipping/calculate/'+origin_id+'/'+destination_id+'/'+weight,
                         success: function (data) {
-                            console.log(data)
                             $('#expressPrice').html();
                             $('#standardPrice').html();
                             $('#expressPrice').html(data.express.price);
@@ -204,6 +203,31 @@
                         }
                     })
                     $('#tarif').show();
+                });
+                $("input[id='express']").change(function () {
+                    var origin_id = $('#originId').val();
+                    var destination_id = $('#city').val();
+                    var weight = $('#weight').val();
+                    $.ajax({
+                        url: '/shipping/calculate/'+origin_id+'/'+destination_id+'/'+weight,
+                        success: function (data) {
+                            if ($("input[id='standard']").change(function () {
+                                $('#tarifName').html('Standard');
+                                $('#tarifCheked').html(data.standard.price);
+
+                                var totalPrice = $('#totalPrice').html() * 1 - data.express.price;
+
+                                $('#totalPrice').html(parseFloat(totalPrice) + parseFloat(data.standard.price))
+                            }))
+
+                            $('#tarifName').html('Express');
+                            $('#tarifCheked').html(data.express.price);
+
+                            var totalPrice = $('#totalPrice').html()* 1 - data.standard.price;
+
+                            $('#totalPrice').html(parseFloat(totalPrice) + parseFloat(data.express.price))
+                        }
+                    })
                 });
                 $("input[name='shippingType']").change(function () {
                     var type = $(this).val();
