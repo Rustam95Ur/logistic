@@ -12,7 +12,7 @@
                 <h3 class="footer-heading">Наши социальные сети</h3>
                 <div class="social-icons">
                     <a href="#"><i class="icofont-facebook"></i></a>
-                    <a href="#"><i class="icofont-instagram"></i></a>
+                    <a href="https://www.instagram.com/dostavka.kazakhstan.china/" target="_blank"><i class="icofont-instagram"></i></a>
                     <a href="#"><i class="icofont-whatsapp"></i></a>
                     <a href="#"><i class="icofont-google-plus"></i></a>
                 </div>
