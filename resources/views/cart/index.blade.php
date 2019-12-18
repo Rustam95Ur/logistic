@@ -29,7 +29,7 @@
                                 <div class="content">
                                     <h1>{{$product['title']}}</h1>
                                     <p>{{trans('product.model')}}: <b>{{$product['model']}}</b></p>
-                                    <p>{{trans('product.country')}}: <b>{{$product['country']}}</b></p>
+                                    <p class="country">{{trans('product.country')}}: <b>{{$product['country']}}</b></p>
                                     {{--                        <div title="You have selected this product to be shipped in the color yellow." style="top: 0"--}}
                                     {{--                             class="color yellow"></div>--}}
                                     {{--                        <div style="top: 43px" class="type small">Size 11.5</div>--}}

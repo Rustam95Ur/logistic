@@ -28,8 +28,8 @@
                     </div>
                     <div class="col-md-12 col-lg-6 blog-list">
                         <div class="row">
-                            <!-- Blog Items -->
-                            <div class=""><!-- Product Description -->
+                            <!-- Product Items -->
+                            <div class="container"><!-- Product Description -->
                                 <div class="product-description">
                                     <h2>{{$product->getTranslatedAttribute('title', $locale, 'fallbackLocale')}}</h2>
                                 </div>
