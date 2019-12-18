@@ -3,12 +3,12 @@
 namespace App\Providers;
 
 use App\Api\ExlineApi;
-use App\Models\Product;
 use App\Models\Service;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Locale;
 use Session;
+use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +20,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         ExlineApi::init();
+        if ($this->app->environment() !== 'production') {
+            $this->app->register(IdeHelperServiceProvider::class);
+        }
     }
 
     /**

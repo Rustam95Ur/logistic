@@ -21,5 +21,21 @@ class BaseController extends Controller
         ]);
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function categoryShow($id)
+    {
+        $category = Category::where('id', '=', $id)->firstOrFail();
+        $categories = Category::all();
+        $products =  Product::where('count', '>', '0')->where('status', '=', 'ACTIVE')->with('categories')->paginate(10);
+        return view('shop.category', [
+            'products' => $products,
+            'category' => $category,
+            'categories' => $categories,
+        ]);
+    }
+
 
 }

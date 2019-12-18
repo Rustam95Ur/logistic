@@ -11,6 +11,8 @@
 |
 */
 
+use TCG\Voyager\Facades\Voyager;
+
 Route::group([
     'middleware' => ['web'],
     'prefix' => Config::get('route_prefix')
@@ -23,6 +25,7 @@ Route::group([
     Route::get('/service/{id}', 'Page\ServiceController@show')->name('service');
 
     Route::get('/shop', 'Shop\BaseController@index')->name('shop');
+    Route::get('/shop/category/{id}', 'Shop\BaseController@categoryShow')->name('category');
 
     Route::get('/product/{id}', 'Shop\ProductController@show')->name('product');
     Route::get('/product/search/{name}', 'Shop\ProductController@search');
