@@ -35,57 +35,64 @@
                                 <span><b>{{$product['qty'] * $product['price']}}</b></span>
                             </li>
                         @endforeach
-                            <li class="list-group-item d-flex justify-content-between">
-                                <span id="tarifName"></span>
-                                <strong id="tarifCheked"></strong>
-                            </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span id="tarifName"></span>
+                            <strong id="tarifCheked"></strong>
+                        </li>
 
                         <li class="list-group-item d-flex justify-content-between">
                             <span>{{trans('shop.total')}}</span>
                             <strong id="totalPrice">{{$totalSum}}</strong>
+                            <input form="checkout-form" name="total_price" value="{{$totalSum}}" hidden="">
+                            <input form="checkout-form" name="main_price" value="{{$totalSum}}" hidden="">
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-8 order-md-1">
                     <h4 class="mb-3">{{trans('checkout.billing-address')}}</h4>
-                    <form class="needs-validation entrance__form" novalidate="">
+                    <form id="checkout-form" method="post" action="{{route('payment')}}">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">{{trans('checkout.fist-name')}}</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="" value=""
+                                <input type="text" class="form-control" id="firstName" name="first_name" placeholder=""
+                                       value=""
                                        required="">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="lastName">{{trans('checkout.last-name')}}</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value=""
+                                <input type="text" class="form-control" id="lastName" name="last_name" placeholder=""
+                                       value=""
                                        required="">
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="phone">{{trans('checkout.phone')}}<span class="text-muted"></span></label>
-                            <input type="text" class="form-control txtLogin" id="phone">
+                            <input type="text" class="form-control txtLogin" id="phone" name="phone">
                         </div>
                         <div class="mb-3">
                             <label for="email">Email<span class="text-muted"></span></label>
-                            <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                            <input type="email" class="form-control" id="email" name="email"
+                                   placeholder="email@example.com">
                         </div>
                         <hr class="mb-4">
                         <h4 class="mb-3">{{trans('checkout.shipping-type')}}</h4>
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="pickup" name="shippingType" type="radio" class="custom-control-input"
-                                       checked="" required="" value="pickup">
-                                <label class="custom-control-label" for="pickup">{{trans('checkout.pickup')}}</label>
+                                <input id="deliveryPickup" name="shippingType" type="radio" class="custom-control-input"
+                                       checked="" required="" value="1">
+                                <label class="custom-control-label"
+                                       for="deliveryPickup">{{trans('checkout.pickup')}}</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input id="courier" name="shippingType" type="radio" class="custom-control-input"
-                                       required="" value="courier">
+                                <input id="deliveryExline" name="shippingType" type="radio" class="custom-control-input"
+                                       required="" value="2">
                                 <label class="custom-control-label"
-                                       for="courier">{{trans('checkout.courier-service')}} </label>
+                                       for="deliveryExline">{{trans('checkout.courier-service')}} </label>
                             </div>
                         </div>
                         <div class="boxes-block" id="loader">
-                            <div class="boxes" >
+                            <div class="boxes">
                                 <div class="box">
                                     <div></div>
                                     <div></div>
@@ -132,21 +139,17 @@
                                 <input type="hidden" id="originId" value="{{$originId}}">
                             </div>
                         </div>
-
-
                         <div id="tarif" style="display: none">
                             <hr class="mb-4">
-                            <h4 class="mb-3">Тариф</h4>
+                            <h4 class="mb-3">{{trans('checkout.tariff')}}</h4>
                             <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
-                                    <input id="express" name="tarif" type="radio" class="custom-control-input"
-                                           checked="" required="" value="">
+                                    <input id="express" name="tariff" type="radio" class="custom-control-input" value="">
                                     <label class="custom-control-label"
                                            for="express">Express - <span id="expressPrice"></span></label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="standard" name="tarif" type="radio" class="custom-control-input"
-                                           checked="true" required="" value="">
+                                    <input id="standard" name="tariff" type="radio" class="custom-control-input" value="">
                                     <label class="custom-control-label"
                                            for="standard">Standard - <span id="standardPrice"></span></label>
                                 </div>
@@ -180,117 +183,30 @@
     <script>
         (function ($) {
             $(function () {
-                $("select[name='city']").change(function () {
-                    var origin_id = $('#originId').val();
-                    var destination_id = $('#city').val();
-                    const currentPrice = $('#express').is(':checked') === true ? $('#expressPrice').text() : $('#standardPrice').text();
-                    var weight = $('#weight').val();
-                    $.ajax({
-                        url: '/shipping/calculate/'+origin_id+'/'+destination_id+'/'+weight,
-                        success: function (data) {
-                            $('#expressPrice').html();
-                            $('#standardPrice').html();
-                            $('#expressPrice').html(data.express.price);
-                            $('#standardPrice').html(data.standard.price);
-                            $("input[id='standard']").val(data.standard.price)
-                            $("input[id='express']").val(data.express.price);
-
-                            $('#tarifName').html('Standard');
-                            $('#tarifCheked').html(data.standard.price);
-
-                            var totalPrice = $('#totalPrice').html();
-                            console.log({ currentPrice, totalPrice }, data.standard.price,$('#expressPrice').text() ,$('#standardPrice').text())
-                            $('#totalPrice').html(parseFloat(totalPrice) - currentPrice + parseFloat(data.standard.price))
-                        }
-                    })
-                    $('#tarif').show();
-                });
-                $("input[id='express']").change(function () {
-                    let currentPrice = $('#express').is(':checked') === true ? $('#expressPrice').text() : $('#standardPrice').text();
-                    var origin_id = $('#originId').val();
-                    var destination_id = $('#city').val();
-                    var weight = $('#weight').val();
-                    $.ajax({
-                        url: '/shipping/calculate/'+origin_id+'/'+destination_id+'/'+weight,
-                        success: function (data) {
-                            // if ($("input[id='standard']").change(function () {
-                            //     $('#tarifName').html('Standard');
-                            //     $('#tarifCheked').html(data.standard.price);
-
-                            //     var totalPrice = $('#totalPrice').html() * 1 - data.express.price;
-
-                            //     $('#totalPrice').html(parseFloat(totalPrice) + parseFloat(data.standard.price))
-                            // }))
-
-                            $('#tarifName').show();
-                            $('#tarifCheked').show();
-
-                            $('#tarifName').html('Express');
-                            $('#tarifCheked').html(data.express.price);
-
-                            var totalPrice = $('#totalPrice').html()* 1 
-                            // - data.standard.price; 
-                            console.log({ currentPrice, totalPrice },data.express.price)
-                            $('#totalPrice').html(parseFloat(totalPrice)-(currentPrice && currentPrice) + parseFloat(data.express.price))
-                        }
-                    })
-                });
-                 $("input[id='standard']").change(function () {
-                    let currentPrice = $('#standard').is(':checked') === true ? $('#standardPrice').text() : $('#standardPrice').text();
-                    var origin_id = $('#originId').val();
-                    var destination_id = $('#city').val();
-                    var weight = $('#weight').val();
-                    $.ajax({
-                        url: '/shipping/calculate/'+origin_id+'/'+destination_id+'/'+weight,
-                        success: function (data) {
-                            // if ($("input[id='standard']").change(function () {
-                            //     $('#tarifName').html('Standard');
-                            //     $('#tarifCheked').html(data.standard.price);
-
-                            //     var totalPrice = $('#totalPrice').html() * 1 - data.standard.price;
-
-                            //     $('#totalPrice').html(parseFloat(totalPrice) + parseFloat(data.standard.price))
-                            // }))
-
-                            $('#tarifName').show();
-                            $('#tarifCheked').show();
-
-                            $('#tarifName').html('Standard');
-                            $('#tarifCheked').html(data.standard.price);
-
-                            var totalPrice = $('#totalPrice').html()* 1 
-                            // - data.standard.price;
-
-                            $('#totalPrice').html(parseFloat(totalPrice) - (currentPrice && currentPrice) + parseFloat(data.standard.price))
-                        }
-                    })
-                });
-                $("input[id='pickup']").change(function(){
-                    $('#tarif').hide();
-
-                    let currentPrice = $('#express').is(':checked') === true ? $('#expressPrice').text() : $('#standardPrice').text();
-                    
-                    var totalPrice = $('#totalPrice').html();
-                    $('#totalPrice').html(parseFloat(totalPrice) - currentPrice)
-                    $('#tarifName').hide();
-                    $('#tarifCheked').hide();
-                    currentPrice = 0;
-                });
+                const mainVal = $("input[name='main_price']").val()
                 $("input[name='shippingType']").change(function () {
                     var type = $(this).val();
-                    if (type === 'courier') {
-                        $('#courierType').show()
-
+                    if (type === '2') {
+                        $('#courierType').show();
+                        $('#tarif').show();
+                        $('#tarifName').show();
+                        $('#tarifCheked').show();
+                        var checedVal = $('#tarifCheked').html();
+                        var sums = parseFloat(mainVal) + parseFloat(checedVal)
+                        $('#totalPrice').html(sums);
+                        $("input[name='total_price']").val(sums);
                     } else {
-                        $('#courierType').hide()
+                        $('#courierType').hide();
+                        $('#tarif').hide();
+                        $('#tarifName').hide();
+                        $('#tarifCheked').hide();
+                        $('#totalPrice').html(mainVal);
+                        $("input[name='total_price']").val(mainVal);
                     }
                 });
-                $("#search").click(function () {
-                    console.log("search")
-                });
+
                 $("select[name='country']").change(function () {
                     var county = $(this).val();
-                    console.log(county)
                     if (county) {
                         $.ajax({
                             url: '/shipping/destinations/' + county,
@@ -303,7 +219,7 @@
                             success: function (data) {
                                 $('select[name="city"]').append("<option disabled selected>{{trans('checkout.choose.city')}}</option>");
                                 $.each(data, function (key, value) {
-                                    $('select[name="city"]').append('<option value="' + value.id + '">' + value.title + '</option>');
+                                    $('select[name="city"]').append('<option value="' + value.id + '">' + value.title + ' (' + value.cached_path + ')' + '</option>');
                                 });
                             },
                             complete: function () {
@@ -315,9 +231,42 @@
                     }
                 });
 
+
+                $("select[name='city']").change(function () {
+                    var origin_id = $('#originId').val();
+                    var destination_id = $('#city').val();
+                    var weight = $('#weight').val();
+                    // const currentPrice = $('#express').is(':checked') === true ? $('#expressPrice').text() : $('#standardPrice').text();
+                    $.ajax({
+                        url: '/shipping/calculate/' + origin_id + '/' + destination_id + '/' + weight,
+                        success: function (data) {
+                            $('#expressPrice').html();
+                            $('#standardPrice').html();
+                            $('#expressPrice').html(data.express.price);
+                            $('#standardPrice').html(data.standard.price);
+                            $("input[id='standard']").val(data.standard.price)
+                            $("input[id='express']").val(data.express.price);
+                            $('#tarifCheked').html(data.standard.price);
+                            $('#tarifName').html('Standard')
+                            var sums = parseFloat(data.standard.price) + parseFloat(mainVal)
+                            $("input[id='standard']").attr('checked','checked');
+                            $('#totalPrice').html(sums)
+                            $("input[name='total_price']").val(sums)
+
+                        }
+                    });
+                    $('#tarif').show();
+                });
+                $("input[name='tariff']").change(function () {
+                    var price = $(this).val();
+                    var type = $(this).attr("id");
+                    $('#tarifName').html(type);
+                    $('#tarifCheked').html(price);
+                    var sums = parseFloat(price) + parseFloat(mainVal)
+                    $('#totalPrice').html(sums)
+                    $("input[name='total_price']").val(sums)
+                });
             });
         })(jQuery);
-
-
     </script>
 @endsection

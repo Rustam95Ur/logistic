@@ -8,7 +8,6 @@ use App\Locale;
 use App\Models\Country;
 use App\Models\Product;
 use Session;
-use TCG\Voyager\Facades\Voyager;
 
 class CheckoutController extends Controller
 {

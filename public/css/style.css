@@ -1617,3 +1617,6 @@ div.wpcf7 input[type="file"]:disabled {
 .navbar-toggler {
     border: 1px solid !important;
 }
+#tarifName {
+    text-transform: capitalize
+}
