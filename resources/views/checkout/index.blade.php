@@ -183,6 +183,7 @@
                 $("select[name='city']").change(function () {
                     var origin_id = $('#originId').val();
                     var destination_id = $('#city').val();
+                    const currentPrice = $('#express').is(':checked') === true ? $('#expressPrice').text() : $('#standardPrice').text();
                     var weight = $('#weight').val();
                     $.ajax({
                         url: '/shipping/calculate/'+origin_id+'/'+destination_id+'/'+weight,
@@ -198,36 +199,82 @@
                             $('#tarifCheked').html(data.standard.price);
 
                             var totalPrice = $('#totalPrice').html();
-
-                            $('#totalPrice').html(parseFloat(totalPrice) + parseFloat(data.standard.price))
+                            console.log({ currentPrice, totalPrice }, data.standard.price,$('#expressPrice').text() ,$('#standardPrice').text())
+                            $('#totalPrice').html(parseFloat(totalPrice) - currentPrice + parseFloat(data.standard.price))
                         }
                     })
                     $('#tarif').show();
                 });
                 $("input[id='express']").change(function () {
+                    let currentPrice = $('#express').is(':checked') === true ? $('#expressPrice').text() : $('#standardPrice').text();
                     var origin_id = $('#originId').val();
                     var destination_id = $('#city').val();
                     var weight = $('#weight').val();
                     $.ajax({
                         url: '/shipping/calculate/'+origin_id+'/'+destination_id+'/'+weight,
                         success: function (data) {
-                            if ($("input[id='standard']").change(function () {
-                                $('#tarifName').html('Standard');
-                                $('#tarifCheked').html(data.standard.price);
+                            // if ($("input[id='standard']").change(function () {
+                            //     $('#tarifName').html('Standard');
+                            //     $('#tarifCheked').html(data.standard.price);
 
-                                var totalPrice = $('#totalPrice').html() * 1 - data.express.price;
+                            //     var totalPrice = $('#totalPrice').html() * 1 - data.express.price;
 
-                                $('#totalPrice').html(parseFloat(totalPrice) + parseFloat(data.standard.price))
-                            }))
+                            //     $('#totalPrice').html(parseFloat(totalPrice) + parseFloat(data.standard.price))
+                            // }))
+
+                            $('#tarifName').show();
+                            $('#tarifCheked').show();
 
                             $('#tarifName').html('Express');
                             $('#tarifCheked').html(data.express.price);
 
-                            var totalPrice = $('#totalPrice').html()* 1 - data.standard.price;
-
-                            $('#totalPrice').html(parseFloat(totalPrice) + parseFloat(data.express.price))
+                            var totalPrice = $('#totalPrice').html()* 1 
+                            // - data.standard.price; 
+                            console.log({ currentPrice, totalPrice },data.express.price)
+                            $('#totalPrice').html(parseFloat(totalPrice)-(currentPrice && currentPrice) + parseFloat(data.express.price))
                         }
                     })
+                });
+                 $("input[id='standard']").change(function () {
+                    let currentPrice = $('#standard').is(':checked') === true ? $('#standardPrice').text() : $('#standardPrice').text();
+                    var origin_id = $('#originId').val();
+                    var destination_id = $('#city').val();
+                    var weight = $('#weight').val();
+                    $.ajax({
+                        url: '/shipping/calculate/'+origin_id+'/'+destination_id+'/'+weight,
+                        success: function (data) {
+                            // if ($("input[id='standard']").change(function () {
+                            //     $('#tarifName').html('Standard');
+                            //     $('#tarifCheked').html(data.standard.price);
+
+                            //     var totalPrice = $('#totalPrice').html() * 1 - data.standard.price;
+
+                            //     $('#totalPrice').html(parseFloat(totalPrice) + parseFloat(data.standard.price))
+                            // }))
+
+                            $('#tarifName').show();
+                            $('#tarifCheked').show();
+
+                            $('#tarifName').html('Standard');
+                            $('#tarifCheked').html(data.standard.price);
+
+                            var totalPrice = $('#totalPrice').html()* 1 
+                            // - data.standard.price;
+
+                            $('#totalPrice').html(parseFloat(totalPrice) - (currentPrice && currentPrice) + parseFloat(data.standard.price))
+                        }
+                    })
+                });
+                $("input[id='pickup']").change(function(){
+                    $('#tarif').hide();
+
+                    let currentPrice = $('#express').is(':checked') === true ? $('#expressPrice').text() : $('#standardPrice').text();
+                    
+                    var totalPrice = $('#totalPrice').html();
+                    $('#totalPrice').html(parseFloat(totalPrice) - currentPrice)
+                    $('#tarifName').hide();
+                    $('#tarifCheked').hide();
+                    currentPrice = 0;
                 });
                 $("input[name='shippingType']").change(function () {
                     var type = $(this).val();
@@ -237,6 +284,9 @@
                     } else {
                         $('#courierType').hide()
                     }
+                });
+                $("#search").click(function () {
+                    console.log("search")
                 });
                 $("select[name='country']").change(function () {
                     var county = $(this).val();
@@ -267,5 +317,7 @@
 
             });
         })(jQuery);
+
+
     </script>
 @endsection
