@@ -46,7 +46,7 @@ Route::group([
     Route::get('/shipping/destinations/{county}', 'Shipping\ExlineController@getDestinations');
     Route::get('/shipping/calculate/{origin_id}/{destination_id}/{weight}', 'Shipping\ExlineController@getCalculate');
 
-    Route::post('/payment', 'Shop/PaymentController@index')->name('payment');
+    Route::post('/payment', 'Shop\PaymentController@index')->name('payment');
 });
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

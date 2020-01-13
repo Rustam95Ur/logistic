@@ -38,19 +38,21 @@
                         <li class="list-group-item d-flex justify-content-between">
                             <span id="tarifName"></span>
                             <strong id="tarifCheked"></strong>
-                        </li>
 
+                        </li>
                         <li class="list-group-item d-flex justify-content-between">
                             <span>{{trans('shop.total')}}</span>
                             <strong id="totalPrice">{{$totalSum}}</strong>
-                            <input form="checkout-form" name="total_price" value="{{$totalSum}}" hidden="">
-                            <input form="checkout-form" name="main_price" value="{{$totalSum}}" hidden="">
                         </li>
+                        <input form="checkout-form" name="total_price" type="hidden" value="{{$totalSum}}">
+                        <input form="checkout-form" name="main_price" type="hidden" value="{{$totalSum}}">
+                        <input form="checkout-form" name="tariff_name" value="standart" type="hidden">
                     </ul>
                 </div>
                 <div class="col-md-8 order-md-1">
                     <h4 class="mb-3">{{trans('checkout.billing-address')}}</h4>
-                    <form id="checkout-form" method="post" action="{{route('payment')}}">
+                    <form class="col rounded-field entrance__form" id="checkout-form" method="post"
+                          action="{{route('payment')}}">
                         @csrf
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -79,14 +81,16 @@
                         <h4 class="mb-3">{{trans('checkout.shipping-type')}}</h4>
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="deliveryPickup" name="shippingType" type="radio" class="custom-control-input"
-                                       checked="" required="" value="1">
+                                <input id="deliveryPickup" name="shipping_type" type="radio"
+                                       class="custom-control-input"
+                                       checked="" required="" value="pickup">
                                 <label class="custom-control-label"
                                        for="deliveryPickup">{{trans('checkout.pickup')}}</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input id="deliveryExline" name="shippingType" type="radio" class="custom-control-input"
-                                       required="" value="2">
+                                <input id="deliveryExline" name="shipping_type" type="radio"
+                                       class="custom-control-input"
+                                       required="" value="exline">
                                 <label class="custom-control-label"
                                        for="deliveryExline">{{trans('checkout.courier-service')}} </label>
                             </div>
@@ -137,6 +141,12 @@
                                 </select>
                                 <input type="hidden" id="weight" value="{{$totalWeight}}">
                                 <input type="hidden" id="originId" value="{{$originId}}">
+                                <input name="city_name" type="hidden" value="">
+
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="street">{{trans('checkout.address.street')}}<span class="text-muted"></span></label>
+                                <input type="text" class="form-control" id="street" name="street">
                             </div>
                         </div>
                         <div id="tarif" style="display: none">
@@ -144,12 +154,14 @@
                             <h4 class="mb-3">{{trans('checkout.tariff')}}</h4>
                             <div class="d-block my-3">
                                 <div class="custom-control custom-radio">
-                                    <input id="express" name="tariff" type="radio" class="custom-control-input" value="">
+                                    <input id="express" name="tariff" type="radio" class="custom-control-input"
+                                           value="">
                                     <label class="custom-control-label"
                                            for="express">Express - <span id="expressPrice"></span></label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="standard" name="tariff" type="radio" class="custom-control-input" value="">
+                                    <input id="standard" name="tariff" type="radio" class="custom-control-input"
+                                           value="">
                                     <label class="custom-control-label"
                                            for="standard">Standard - <span id="standardPrice"></span></label>
                                 </div>
@@ -161,14 +173,14 @@
                         <h4 class="mb-3">{{trans('checkout.payment-type')}}</h4>
                         <div class="d-block my-3">
                             <div class="custom-control custom-radio">
-                                <input id="delivery" name="paymentType" type="radio" class="custom-control-input"
-                                       checked="" required="">
+                                <input id="delivery" name="payment_type" type="radio" class="custom-control-input"
+                                       checked="" required="" value="offline">
                                 <label class="custom-control-label"
-                                       for="delivery">{{trans('checkout.payment.delivery')}}</label>
+                                       for="delivery">{{trans('checkout.payment.offline')}}</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input id="online" name="paymentType" type="radio" class="custom-control-input"
-                                       required="">
+                                <input id="online" name="payment_type" type="radio" class="custom-control-input"
+                                       required="" value="online">
                                 <label class="custom-control-label"
                                        for="online">{{trans('checkout.payment.online')}} </label>
                             </div>
@@ -183,15 +195,15 @@
     <script>
         (function ($) {
             $(function () {
-                const mainVal = $("input[name='main_price']").val()
-                $("input[name='shippingType']").change(function () {
+                const mainVal = $("input[name='main_price']").val();
+                $("input[name='shipping_type']").change(function () {
                     var type = $(this).val();
-                    if (type === '2') {
+                    if (type === 'exline') {
                         $('#courierType').show();
                         $('#tarif').show();
                         $('#tarifName').show();
                         $('#tarifCheked').show();
-                        var checedVal = $('#tarifCheked').html();
+                        var checedVal = ($('#tarifCheked').html() === '') ? 0 : $('#tarifCheked').html();
                         var sums = parseFloat(mainVal) + parseFloat(checedVal)
                         $('#totalPrice').html(sums);
                         $("input[name='total_price']").val(sums);
@@ -236,7 +248,8 @@
                     var origin_id = $('#originId').val();
                     var destination_id = $('#city').val();
                     var weight = $('#weight').val();
-                    // const currentPrice = $('#express').is(':checked') === true ? $('#expressPrice').text() : $('#standardPrice').text();
+                    var city_name = $("#city option:selected").text();
+                    $("input[name='city_name']").val(city_name);
                     $.ajax({
                         url: '/shipping/calculate/' + origin_id + '/' + destination_id + '/' + weight,
                         success: function (data) {
@@ -244,14 +257,15 @@
                             $('#standardPrice').html();
                             $('#expressPrice').html(data.express.price);
                             $('#standardPrice').html(data.standard.price);
-                            $("input[id='standard']").val(data.standard.price)
+                            $("input[id='standard']").val(data.standard.price);
                             $("input[id='express']").val(data.express.price);
                             $('#tarifCheked').html(data.standard.price);
-                            $('#tarifName').html('Standard')
-                            var sums = parseFloat(data.standard.price) + parseFloat(mainVal)
-                            $("input[id='standard']").attr('checked','checked');
-                            $('#totalPrice').html(sums)
-                            $("input[name='total_price']").val(sums)
+                            $('#tarifName').html('Standard');
+                            var sums = parseFloat(data.standard.price) + parseFloat(mainVal);
+                            $('input[name="total_price"]').val(sums);
+                            $("input[id='standard']").attr('checked', 'checked');
+                            $('#totalPrice').html(sums);
+                            $('input[name="tariff_name"]').val('standard');
 
                         }
                     });
@@ -260,10 +274,12 @@
                 $("input[name='tariff']").change(function () {
                     var price = $(this).val();
                     var type = $(this).attr("id");
+                    $('input[name="tariff_name"]').val(type);
                     $('#tarifName').html(type);
                     $('#tarifCheked').html(price);
-                    var sums = parseFloat(price) + parseFloat(mainVal)
-                    $('#totalPrice').html(sums)
+                    price = (price === '') ? 0 : price;
+                    var sums = parseFloat(price) + parseFloat(mainVal);
+                    $('#totalPrice').html(sums);
                     $("input[name='total_price']").val(sums)
                 });
             });
