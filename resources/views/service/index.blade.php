@@ -173,6 +173,38 @@
             </div>
         </section>
         <!-- How It Works End -->
+                <!-- Clients Start -->
+        <section class="wide-tb-100 bg-sky-blue pos-rel">
+            <div class="container">
+                <div class="row">
+                    <!-- Heading Main -->
+                    <div class="col-sm-12 wow fadeInDown">
+                        <h1 class="heading-main">
+                             Требование к грузу
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="{{asset('img/img2.jpeg')}}" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{{asset('img/img1.jpeg')}}" alt="">
+                            <hr>
+                            <span><b>Влияние транспорта на конечную сумму по возрастанию:</b></span>
+                        <ol>
+                            <li>Бусы  – грузоподъемностью от 0,5 тонн до 3,5 тонн;</li>
+                            <li>Фургоны грузоподъемностью от 3,5 до 5 тонн;</li>
+                            <li>Крупные бортовые грузовики – тоннаж от 7 до 10 тонн;</li>
+                            <li>Фуры с тентованным кузовом – от 18 до 24 тонн;</li>
+                            <li>Фуры с изотермическим и кузовом-холодильником – до 20 тонн и выше;</li>
+                            <li>Тягачи с полуприцепами, контейнеровозы, тралы и платформы – грузоподъемностью до 40 тонн</li>
+                        </ol>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Client Testimonials Start -->
         <section class="wide-tb-100">
             <div class="container">
