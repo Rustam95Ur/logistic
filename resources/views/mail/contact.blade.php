@@ -42,7 +42,7 @@
                                 <tbody>
                                 <tr>
                                     <td style="padding-bottom:10px">
-                                        <h3 style="text-align: center; margin-top: 50px">Информаци о пользователе</h3>
+                                        <h3 style="text-align: center; margin-top: 50px">Информация о пользователе</h3>
                                         <p><b>Имя:</b> {{ $mail->name }}</p>
                                         <p><b>Email:</b> {{ $mail->email }}</p>
                                         <p><b>Номер телефона:</b>&nbsp;+7{{ $mail->phone}}</p>

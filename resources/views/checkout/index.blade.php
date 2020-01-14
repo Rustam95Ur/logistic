@@ -92,7 +92,7 @@
                                        class="custom-control-input"
                                        required="" value="exline">
                                 <label class="custom-control-label"
-                                       for="deliveryExline">{{trans('checkout.courier-service')}} </label>
+                                       for="deliveryExline">{{trans('checkout.exline')}} </label>
                             </div>
                         </div>
                         <div class="boxes-block" id="loader">

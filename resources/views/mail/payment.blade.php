@@ -27,8 +27,7 @@
                                 <tbody>
                                 <tr>
                                     <td align="center">
-                                        <h3 style="color:#393185; text-transform: uppercase;"> Запрос на
-                                            транспортировку</h3>
+                                        <h3 style="color:#393185; text-transform: uppercase;">Покупка с магазина</h3>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -39,18 +38,20 @@
                                 <tbody>
                                 <tr>
                                     <td style="padding-bottom:10px">
-                                        <h3 style="text-align: center">Информация о грузе</h3>
-                                        <p><b>Вид транспорта:</b> {{ $mail->transport_type }}</p>
-                                        <p><b>Тип груза:</b> {{ $mail->freight_type  }}</p>
-                                        <p><b>Город отправления:</b> {{ $mail->city_departure }}</p>
-                                        <p><b>Город доставки:</b> {{ $mail->delivery_city }}</p>
-                                        <p><b>Общий вес:</b> {{ $mail->gross_weight }}</p>
-                                        <p><b>Измерение:</b> {{ $mail->dimension }}</p>
                                         <h3 style="text-align: center; margin-top: 50px">Информация о пользователе</h3>
-                                        <p><b>Имя:</b> {{ $mail->name }}</p>
+                                        <p><b>ФИО:</b> {{ $mail->full_name }}</p>
                                         <p><b>Email:</b> {{ $mail->email }}</p>
                                         <p><b>Номер телефона:</b>&nbsp;+7{{ $mail->phone}}</p>
-                                        <p><b>Сообщение:</b>&nbsp;{{ $mail->message }}</p>
+                                        <h3 style="text-align: center; margin-top: 50px">Информация о товаре/ах</h3>
+                                        <p><b>Название и количество:</b> {{ $mail->products }}</p>
+                                        <p><b>Цена:</b> {{ $mail->price  }}</p>
+                                        <p><b>Доставка:</b> {{ $mail->shipping_type }}</p>
+                                        @if($mail->shipping_type == trans('checkout.exline'))
+                                            <p><b>Город:</b> {{ $mail->city }}</p>
+                                            <p><b>Улица:</b> {{ $mail->street }}</p>
+                                            <p><b>Тариф:</b> {{ $mail->tariff }}</p>
+                                        @endif
+                                        <p><b>Оплата:</b> {{ $mail->payment_type }}</p>
                                     </td>
                                 </tr>
                                 </tbody>
