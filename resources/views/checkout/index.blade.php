@@ -183,6 +183,7 @@
                                        required="" value="online">
                                 <label class="custom-control-label"
                                        for="online">{{trans('checkout.payment.online')}} </label>
+                                <p><small class="text-danger" id="online-msg" style="display: none" >{{ trans('checkout.online-msg') }}</small></p>
                             </div>
                         </div>
                         <hr class="mb-4">
@@ -281,6 +282,14 @@
                     var sums = parseFloat(price) + parseFloat(mainVal);
                     $('#totalPrice').html(sums);
                     $("input[name='total_price']").val(sums)
+                });
+                $("input[name='payment_type']").change(function () {
+                    var type = $(this).val();
+                    if (type === 'online') {
+                        $('#online-msg').show();
+                    } else {
+                        $('#online-msg').hide();
+                    }
                 });
             });
         })(jQuery);
